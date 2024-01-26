@@ -4,6 +4,7 @@
     --text-font-weight: bolder;
 }
 body {
+
     font-size: 23px;
     margin: 0;
     padding: 0;
@@ -20,8 +21,9 @@ body {
 }
 
 #navigation-menu-container {
-    display: flex;
-    justify-content: flex-end;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    
     padding-right: 80px;
 }
 
@@ -52,6 +54,12 @@ body {
     border-radius: 50%;
     
 }
+
+#menu
+{
+    display: none;
+}
+
 
 .search-icon {
     margin-top: 25px;
@@ -177,6 +185,8 @@ thead>tr {
     top:1px;
 }
 
+
+
 tbody>tr, thead>tr{
     border-bottom: 1px solid grey;
     border-radius: 10px;
@@ -195,6 +205,90 @@ tbody>tr>td:nth-of-type(2){
 }
 /* End of activities design */
 /* ----------------------------------------------------------------------------------------------- */
+/* Responsive design */
+/* for mobile screen */
+
+@media screen and (max-width: 767px){
+    body 
+    {
+        font-size: 15px;
+    }
+    #navigation-link-container, #separator
+    {
+        display: none;
+    }
+
+    nav p
+    {
+        font-size: 15px;
+        white-space: nowrap;
+        position: relative;
+        right: 20px;
+    }
+
+    .notification-and-number 
+    {
+        position: relative;
+        right: 50px;
+    }
+    #navigation-menu-container 
+    {
+        display: flex;
+        overflow:auto;
+        align-items: center;
+        justify-content: space-between;
+        
+        
+    }
+
+    
+    
+    .search-icon 
+    {
+        display: none;
+    }
+
+    #menu 
+    {
+        display: block;
+        font-size: larger;
+        cursor: pointer;
+    }
+    #vertical-line2, #vertical-line1 
+    {
+        display: none;
+    }
+
+    thead>tr, tbody>tr {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        position: relative;
+        left: 100px;
+        gap: 10px;
+        width: 400px;
+        
+    }
+
+    #activities-section
+    {
+        width: 100%;
+    }
+
+    #first-thead
+    {
+        display: none;
+    }
+    #activities-section-container h1 
+    {
+        position: relative;
+        right: 10px;
+    }
+    
+}
+
+/* End of mobile design */
+
+/* for tablet */
 
 
 
@@ -203,6 +297,70 @@ tbody>tr>td:nth-of-type(2){
 
 
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    body {
+        background-color: red; 
+        font-size: 19px;
+    }
+    thead>tr, tbody>tr {
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        position: relative;
+        left: 100px;
+        gap: 10px;
+        width: 590px;
+        
+    }
 
-/* End of Activities styles */
-/* --------------------------------------------------------------------------------------------------------------------------------- */
+    #first-thead
+    {
+        display: none;
+    }
+
+    nav p
+    {
+        font-size: 15px;
+        white-space: nowrap;
+        position: relative;
+        right: 20px;
+    }
+    .search-icon {
+        margin: auto
+    }
+    #activities-section-container h1 
+    {
+        position: relative;
+        right: 40px;
+    }
+    nav p
+    {
+        font-size: 15px;
+        white-space: nowrap;
+        position: relative;
+        right: 20px;
+    }
+    #side-bar-nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr auto;
+        
+    }
+    thead>tr, tbody>tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        position: relative;
+        right: 300px;
+        gap: 0px;
+        padding-right: 100px;
+        width: 400px;
+        
+        
+    }
+}
+
+
+/*@media screen and (min-width: 1025px) {
+    body {
+        
+        background-color: blue; 
+    }
+} */
