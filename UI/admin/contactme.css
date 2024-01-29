@@ -16,14 +16,16 @@ body {
 
 #navigation-menu-section {
     background-color: white;
-    height: 70px;
+   
 }
 
-#navigation-menu-container {
-    display: flex;
-    justify-content: flex-end;
-    padding-right: 80px;
+#navigation-menu-container
+{
+    display: grid;
+    grid-template-columns: 3fr 1fr 2fr 1fr 1fr;
 }
+
+
 
 #img-nav-span
 {
@@ -31,8 +33,76 @@ body {
     align-items: center;
     margin-left: 40px;
     position: relative;
-    bottom: 5px;
     
+    
+}
+.search-icon 
+{
+    position: relative;
+    left: 80%;
+    top : 20px;
+    font-size: var(--text-full-screen-font-size);
+}
+
+#vertical-line1 {
+    width: 1px;
+    height: 70px;
+    background-color: silver;
+    margin-left: 50px;
+    margin-right: 10px;
+
+}
+
+#vertical-line2 {
+    width: 1px;
+    height: 70px;
+    background-color: silver;
+    margin-left: 70px;
+    margin-right: 10px;
+}
+
+#side-bar-nav {
+    display: flex;
+    justify-content: center;
+    
+}
+#separator {
+    width: 3px;
+    height: 720px;
+    background-color: rgb(148, 145, 145);
+    margin-left: 50px;
+    margin-right: 10px;
+}
+
+
+#navigation-link-container 
+{
+    padding-top: 20px;
+    padding-left: 30px;
+}
+
+#side-bar-nav nav ul, #navigation-link-container>div {
+    list-style: none;
+    padding: 20px;
+    margin: auto;
+}
+
+#menu 
+{
+    display: none;
+}
+
+#side-bar-nav nav ul li {
+    margin-top: 17px;
+    font-size: var(--text-font-size);
+    font-weight: var(--text-font-weight);
+    white-space: nowrap;
+}
+
+#side-bar-nav nav ul li:hover , #logout:hover
+{
+    color: blue;
+    cursor: pointer;
 }
 
 #img-nav-span nav {
@@ -53,31 +123,12 @@ body {
     
 }
 
-.search-icon {
-    margin-top: 25px;
-    font-size: 17px;
-}
-
-#vertical-line1 {
-
-    width: 1px;
-    height: 70px;
-    background-color: silver;
-    margin-left: 50px;
-    margin-right: 10px;
-
-}
-
-#vertical-line2 {
-    width: 1px;
-    height: 70px;
-    background-color: silver;
-    margin-left: 70px;
-    margin-right: 10px;
-}
-
-.search-and-bar {
-    display: flex;
+#navigation-link-container>img
+{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
 }
 
 .notification-and-number {
@@ -101,57 +152,6 @@ body {
 
 
 
-#side-bar-nav nav ul {
-    list-style: none;
-    padding: 20px;
-    margin: auto;
-}
-
-#side-bar-nav nav ul li {
-    margin-top: 17px;
-    font-size: var(--text-font-size);
-    font-weight: var(--text-font-weight);
-    white-space: nowrap;
-}
-
-#side-bar-nav nav ul li:hover , #logout:hover
-{
-    color: blue;
-    cursor: pointer;
-}
-
-
-
-#side-bar-nav {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 4fr;
-    
-}
-
-#navigation-link-container {
-    padding-top: 40px;
-    margin-left: 90px;
-}
-
-
-#navigation-link-container div>span {
-    position: relative;
-    top: 80px;
-    font-size: var(--text-font-size);
-    font-weight: var(--text-font-weight);
-}
-
-
-#separator {
-    width: 3px;
-    height: 620px;
-    background-color: rgb(148, 145, 145);
-    margin-left: 50px;
-    margin-right: 10px;
-}
-
-
-
 
 
 /* End Navigation menu */
@@ -161,7 +161,9 @@ body {
 
 #contact-overview-section {
     margin-top: 10px;
-    margin-right: 60px;
+    margin-left: 100px;
+    width: 100%;
+    padding-right: 100px;
 
 }
 
@@ -244,3 +246,157 @@ tbody>tr>td:nth-of-type(4)>button:active
 
 /* End of Activities styles */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
+
+
+@media screen and (max-width: 768px) {
+    #navigation-menu-container
+    {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+    #vertical-line1,#vertical-line2
+    {
+        display: block;
+        width: 1px;
+        height: 50px;
+        background-color: grey;
+    }
+
+
+
+    #navigation-link-container, #separator
+    {
+        display: none;
+    }
+
+    nav p
+    {
+        font-size: 15px;
+        white-space: nowrap;
+        position: relative;
+        right: 20px;
+    }
+
+    .notification-and-number 
+    {
+        position: relative;
+        right: 50px;
+    }
+    #navigation-menu-container 
+    {
+        display: flex;
+        overflow:auto;
+        align-items: center;
+        justify-content: space-around;
+        
+        
+    }
+
+    #menu 
+    {
+        display: block;
+    }
+
+    
+    
+    .search-icon 
+    {
+        display: none;
+    }
+
+    #menu 
+    {
+        display: block;
+        font-size: larger;
+        cursor: pointer;
+        padding-right: 80px;
+        color: black;
+        
+    }
+    #vertical-line2, #vertical-line1 
+    {
+        display: none;
+    }
+   
+}
+
+
+
+/* End of mobile design */
+
+/* for tablet */
+
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    #navigation-menu-container
+    {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+
+
+
+    #navigation-link-container, #separator
+    {
+        display: none;
+    }
+
+    nav p
+    {
+        font-size: 15px;
+        white-space: nowrap;
+        position: relative;
+        right: 20px;
+    }
+
+    .notification-and-number 
+    {
+        position: relative;
+        right: 50px;
+    }
+    #navigation-menu-container 
+    {
+        display: flex;
+        overflow:auto;
+        align-items: center;
+        justify-content: space-around;
+        
+        
+    }
+    #menu 
+    {
+        display: block;
+    }
+
+    
+    
+    .search-icon 
+    {
+        display: none;
+    }
+
+    #menu 
+    {
+        display: block;
+        font-size: larger;
+        cursor: pointer;
+        padding-right: 80px;
+        color: black;
+        
+    }
+    #vertical-line2, #vertical-line1 
+    {
+        display: none;
+    }
+
+    #navigation-menu-container
+    {
+        display: flex;
+        align-items: center;
+        width: 100%;
+    }
+}
