@@ -19,7 +19,7 @@ nav {
     background-color: #EBF0F8;
     height: 90px;
     position: relative;
-    
+    width: 100%;
     
 
 }
@@ -53,6 +53,11 @@ ul li:nth-of-type(6)>span:nth-of-type(2){
 
 ul li:hover {
     color: blue
+}
+
+#menu 
+{
+    display: none;
 }
 /* End of navigation style */
 
@@ -164,6 +169,7 @@ ul li:hover {
 
 #comment-section {
     background-color: #EBF0F8;
+    width: 100%;
 }
 
 #comment-section>div {
@@ -239,9 +245,14 @@ ul li:hover {
 
 /* footer section */
 
+#address2 
+{
+    display: none;
+}
+
 footer {
     background-color: #F1F9F8;
-    height: 300px;
+    width:100%
 }
 
 footer #address {
@@ -264,6 +275,7 @@ footer #social-media-icons a {
     font-size: 20px;
     cursor: pointer;
 }
+
 
 footer #social-media-icons a:nth-of-type(1){
     margin-left: 20px;
@@ -288,9 +300,340 @@ footer #copyright {
 #back-to-top {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 30px;
     cursor: pointer;
     color: black;
 }
 
 /* End of footer sectio */
+
+/* -------------------------------------------------------------------------------------------------------------- */
+/* Responsive design for mobile design */
+
+@media screen and (max-width: 768px) {
+
+    body 
+    {
+        font-size: 16px;
+    }
+    ul 
+    {
+        display: none;
+    }
+    nav 
+    {
+        width: 100%;
+    }
+
+    #menu
+    {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        padding-top: 30px;
+        float: right;
+        padding-right: 40px;
+        margin: auto;
+
+    }
+
+    #blog-intro-container 
+    {
+        width: 100%;
+    }
+
+    #blog-intro-container h1, .additional-info
+    {
+        text-align: center;
+
+    }
+
+    #blog-intro-container h1 
+    {
+        font-size: 26px;
+    }
+
+    #description-container
+    {
+        width: 100%;
+        margin-left: 0px;
+        padding: 0px 30px;
+    }
+
+    #api-introduction>div>h1
+    {
+        text-align: center
+    }
+
+    #api-introduction>div>p 
+    {
+        text-align: left;
+        padding: 0 30px;
+    }
+
+    #api-introduction
+    {
+        display: block;
+        
+    }
+    #api-introduction div:nth-of-type(2)
+    {
+        display: none;
+    }
+    #api-introduction div:nth-of-type(1)
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #main-content-of-blog
+    {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #main-content-of-blog div>h5
+    {
+        text-align: center;
+    }
+
+    #main-content-of-blog div>p 
+    {
+        padding: 0 30px;
+    }
+
+    #comment-section
+    {
+        width: 100%;
+    }
+
+    #thanks-message 
+    {
+        font-size: 14px;
+        padding-right: 80px;
+    }
+
+    #comment-section div 
+    {
+        margin-left: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .container-blog
+    {
+        display: block;
+        width: 100%;
+        
+    }
+
+    .recent-posts h1
+    {
+        text-align: center;
+    }
+
+    .container-blog>div 
+    {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+        height: 300px;
+    }
+
+    footer>#address {
+        display: none;
+    }
+    footer>#address2 
+    {
+        display: block;
+        text-align: center;
+        
+    }
+
+    footer>#address2>p 
+    {
+        padding-top: 30px;
+    }
+
+    footer>#address2>span 
+    {
+        margin-right: 20px;
+        position: relative;
+        top: 10px;
+    }
+    .doc 
+    {
+        position: relative;
+        top: 10px;
+    }
+
+
+    
+}
+
+
+/* For tablet */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    body 
+    {
+        font-size: 16px;
+    }
+    ul 
+    {
+        display: none;
+    }
+    nav 
+    {
+        width: 100%;
+    }
+
+    #menu
+    {
+        display: block;
+        cursor: pointer;
+        font-size: 30px;
+        padding-top: 30px;
+        float: right;
+        padding-right: 40px;
+        margin: auto;
+
+    }
+
+    #blog-intro-container 
+    {
+        width: 100%;
+    }
+
+    #blog-intro-container h1, .additional-info
+    {
+        text-align: center;
+
+    }
+
+    #blog-intro-container h1 
+    {
+        font-size: 26px;
+    }
+
+    #description-container
+    {
+        width: 100%;
+        margin-left: 0px;
+        padding: 0px 30px;
+    }
+
+    #api-introduction>div>h1
+    {
+        text-align: center
+    }
+
+    #api-introduction>div>p 
+    {
+        text-align: left;
+        padding: 0 30px;
+    }
+
+    #api-introduction
+    {
+        display: block;
+        
+    }
+    #api-introduction div:nth-of-type(2)
+    {
+        display: none;
+    }
+    #api-introduction div:nth-of-type(1)
+    {
+        padding-left: 20px;
+        padding-right: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #main-content-of-blog
+    {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #main-content-of-blog div>h5
+    {
+        text-align: center;
+    }
+
+    #main-content-of-blog div>p 
+    {
+        padding: 0 30px;
+    }
+
+    #comment-section
+    {
+        width: 100%;
+    }
+
+    #thanks-message 
+    {
+        font-size: 14px;
+        
+    }
+
+    #comment-section div 
+    {
+        margin-left: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .container-blog
+    {
+        display: flex;
+        width: 100%;
+        
+        gap: 30px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .recent-posts h1
+    {
+        text-align: center;
+    }
+
+    .container-blog>div 
+    {
+        width: 80%;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+
+    footer>#address {
+        display: none;
+    }
+    footer>#address2 
+    {
+        display: block;
+        text-align: center;
+        
+    }
+
+    footer>#address2>p 
+    {
+        padding-top: 30px;
+    }
+
+    footer>#address2>span 
+    {
+        margin-right: 20px;
+        position: relative;
+        top: 10px;
+    }
+    .doc 
+    {
+        position: relative;
+        top: 10px;
+    }
+
+
+    
+}
