@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="stylesheet" href="dashboard.css" />
+  </head>
+  <body>
+    <section id="navigation-menu-section">
+      <div id="navigation-menu-container">
+        <div class="search-and-bar">
+          <span- class="search-icon">
+            <!-- <i class="fa-solid fa-bars"></i> -->
+            <span
+              ><a href="" style="color: grey;"><i class="fa-solid fa-magnifying-glass"></i></a
+            ></span>
+            <span style="margin-left: 10px; color: grey;">Search</span>
+          </span>
+        </div>
+        <div id="vertical-line1"></div>
+        <div id="img-nav-span">
+          <img
+            src="./images/Myimage.jpg"
+            alt="my image"
+            
+          />
+          <nav>
+            <p>Ruth Uwamahoro</p>
+            <p>Admin</p>
+          </nav>
+        </div>
+        <div id="vertical-line2"></div>
+        <div class="notification-and-number">
+          <span id="number-notifications">3</span>
+          <a href="" style="font-size: 30px;"><i class="fa-regular fa-bell"></i></a>
+        </div>
+      </div>
+    </section>
+    <section id="side-bar-nav">
+      <div id="navigation-link-container">
+        <img
+            src="./images/Myimage.jpg"
+            alt="my image" style="width: 100px;height: 100px; border-radius: 100px;margin-left: 20px;"
+            
+          />
+
+        <nav>
+            <ul>
+                <li>Dashboard</li>
+                <li>Blogs Contents</li>
+                <li>Contact Me</li>
+                <li>Activities</li>
+                <li>Projects</li>
+                <li>Settings</li>
+            </ul>
+        </nav>
+        <div>
+            <span><a href="">
+                <svg width="22" height="22" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <rect width="40" height="40" fill="url(#pattern0)"/>
+                <defs>
+                <pattern id="pattern0" patternContentUnits="objectBoundingBox" width="1" height="1">
+                <use xlink:href="#image0_208_551" transform="scale(0.0111111)"/>
+                </pattern>
+                <image id="image0_208_551" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAFTklEQVR4nO2cXYhVVRTH/zNj96alhPRF9IWvKSpBTJn1UNAXREFfIpiamRUl1IP01FMMFc0MVhQF+RT1UENFHzYVRRBl+ZHvKcaklTlZaI6mtmPBunCRs9Y9Z9x7nXP22T/YMHiv53/2/56z99prr3OARCKRSCQStaMfQF/ZJxEzMwG8DmCK22sAziz7pGKjDeBjAO6U9kky2x8tAB9kmNxpnyazw5vsktl2Jrtktp3JLpltZ7JLZtuZnMw2NLnTNqdoJLzJyewCi5Hupn2e5/82fgXZynEld4YA6fMix2gk7ZxXI30Pynemc6xG8WJBYzSj85o9igamOv8pePX1MjqP2YealmLt51RnkVs8j9G9zJ5i7UaxqeA4mtdozew3UFPoNnwUwA8AtgJYX+DWPJvNnuJbeqTHZFXEaPCxRvnYU2wyaeZlBYCvAXzFf5fKUxkdf7rgMfpyfq+o0d3HLzouP56h8yRKYj6AYxkntD+Qnpum0dNhT4bOUQBXwBiaUL4XOk7RRN2N/lPQ+tZ6Mr1f6fhbERi9SdFbDiNoKfuzcBJ/A7gkAqMvAnBQ0JvgHfngPKZ0+qGAus7QaGKdovkIAjMA4CdBfGfg8csZG0192S5o7mYvgnGX0uGbQgrD3mjiZkX3zpDCHwqiFIEgQqOJLYLu+wjE+QCOC6L3IF6jlwm6/wI4L4TgWkHwACffYzW6BeAPQXtNCMExQYzyyojYaOJlQfsdeGYGx8hZYjcgfqNvFLT/8h19LBSEDhtuD7kSjW5zFjBL32v+Y5UgMg47XIlGE58L+pSO8MaoIDKE5hj9rKA/7FPkPUGEQp+mGL1c0KcgwRs/CiJXozlGXyvob/Mpsk8QuRjNMfpSQX+vTxEptJuD5hh9jqBP6VRvSEtviq+bYvQZylLcG1l7g85o6V0Vo9uCPu0lemNSEJmL5hh9rqBPeZCgu8LULkNzjJ4n6O/yKbJTEBmEHQcz9Gm32oprBA92WCxYLCt4XsrQ32iov9JiwSItP5+BHTMBvMp1I9ResdqNZoYs0hCrlUp6a/pKKr0dFzygK90bVwoihzi+jJ2WUs+92KfQgFJQsgTxc53Q98kQJRbShPg84mfEaitLq1DaF7qYpGQozfCb0PeHQ9WjnRAEb0G83Cb0mfI/F4QS3SyI0jZPrHwp9JmKicx3GRyvnGJjUOnvvaFLdvdWYKPWii+Evv5isfv/hPIrUxFkLNyn9JMeigrOWUqJFBVpz0b9maPcuRSBzLI6kfXKr/0m6s/bSv/ocT8zBjg9KJ3MA6gv65R+bStjzUClBv8JJ3QEwFLUj+uVR6dPAriqrBMbVn59yo0sQH1YyEWLUn+eKzurJVXEd5bnC1APk39V+vFNFbKUlysPQHau7KWo9nChXckHuHimMmlEaWxz/NmDqObEp533ES4FqxR3KEkn1xX6za5InKyFcI77cjsqysocZk8AuLvkFZ+0GOnOzHmtew51ZWu3o+P2mXE16hIld3HqcFHZKzlrzNYmSNfVqPO3BloIzOB8spTqzJr4Kjcm94KqmL7L2UHH4dUwRyinU9PX4h96RNkZkUK4ykQXRaHY8wVeVbkC7TC/6XyIn58Z5JKsuWxki/+ex8PPKv7ueI+3j2W1k7wYKT1O9lWusKWgARZth/E8YcIAb/Dur4DBv3MWLuZNZbT5ceeJEgymMXuDZT65KoYv4/fT9Yq9T6dRTPwRx8+NfDdpNxfyrTymFL0XaXSMd7nuIlhJQN3p53q2TiQxxpPWLjbwGLdJ/rftbOoQr0wXNfG1mIlEIpFIJBKJRCKB6fI/vcIvIyvYq68AAAAASUVORK5CYII="/>
+                </defs>
+                </svg></a>
+            </span>
+            <span>Logout</span>
+        </div>
+      </div>
+      <div id="separator"></div>
+
+
+
+      <div id="overview-container">
+        <h1>Blogs and users Overview</h1>
+        <div>
+            
+            <div id="posted-inquires" style="font-size: 17px;">
+                <div style="padding-left: 20px;margin: auto;">
+                    <p>4 blogs</p>
+                    <h3>Posted</h3>
+                </div>
+                <div id="vertical-line3"></div>
+                <div style="padding-right: 20px;margin: auto; display: flex;">
+                    
+                        <span style="margin-top:22px; margin-right: 10px;">5</span> <h3>inquires</h3></p>
+                </div>
+                
+                
+            </div>
+        </div>
+        <div>
+            <div id="blog-container-overview">
+                <div>
+                    <h3>Power of RESTAPI</h3>
+                    <p><span>Published Date:</span> <span>Jan 15,2023</span></p>
+                    <p><span>Coments:</span> <span><a href="" style="color: black;"><i class="fa-solid fa-comment-dots"></i></a></span></p>
+                    <p><span>Likes:</span> <span><a href="" style="color: black;">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </a></span></p>
+                </div>
+                <div>
+                    <h3>Power of RESTAPI</h3>
+                    <p><span>Published Date:</span> <span>Jan 15,2023</span></p>
+                    <p><span>Coments:</span> <span><a href="" style="color: black;"><i class="fa-solid fa-comment-dots"></i></a></span></p>
+                    <p><span>Likes:</span> <span><a href="" style="color: black;">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </a></span></p>
+                </div>
+            </div>
+            <div id="blog-container-overview">
+                <div>
+                    <h3>Power of RESTAPI</h3>
+                    <p><span>Published Date:</span> <span>Jan 15,2023</span></p>
+                    <p><span>Coments:</span> <span><a href="" style="color: black;"><i class="fa-solid fa-comment-dots"></i></a></span></p>
+                    <p><span>Likes:</span> <span><a href="" style="color: black;">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </a></span></p>
+                </div>
+                <div>
+                    <h3>Power of RESTAPI</h3>
+                    <p><span>Published Date:</span> <span>Jan 15,2023</span></p>
+                    <p><span>Coments:</span> <span><a href="" style="color: black;"><i class="fa-solid fa-comment-dots"></i></a></span></p>
+                    <p><span>Likes:</span> <span><a href="" style="color: black;">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </a></span></p>
+                </div>
+            </div>
+        </div>
+      </div>
+
+
+    </section>
+    
+  </body>
+</html>

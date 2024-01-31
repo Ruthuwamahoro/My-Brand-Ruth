@@ -69,13 +69,12 @@
 const form = document.getElementById("myForm");
 const username = document.getElementById("Username");
 const password = document.getElementById("password");
-const usernameErrorMessage = document.getElementById("usernameError");
-const passwordErrorMessage = document.getElementById("emailError");
-const message = document.getElementById('message')
 const errorMessage = document.getElementById('errorMessage')
-
+const nst = document.getElementById('nst');
 
 document.getElementById('myForm').addEventListener('submit', (e) => {
+
+  
   e.preventDefault();
   errors = [];
   if (username.value.trim() === "") {
@@ -95,8 +94,18 @@ document.getElementById('myForm').addEventListener('submit', (e) => {
    
     errorMessage.textContent = errors.join(',')
 
+  } else {
+    const StorageUsers = {
+      username: username.value,
+      password: password.value
+    }
+
+    localStorage.setItem("StoreUsers", JSON.stringify(StorageUsers));
+    const getItem = localStorage.getItem("StoreUsers")
+    console.log(JSON.parse(getItem))
+    window.location.href = "../admin/dashboard.html"
   }
-  window.location.href = "../admin/dashboard.html"
+  
 })
 
 
