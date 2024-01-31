@@ -26,8 +26,9 @@ body
 {
     background-color: var(--container-background-color);
     width: 500px;
-    height: 520px;
+    height: 600px;
     margin: 90px auto;
+
 }
 
 #container h1
@@ -37,7 +38,6 @@ body
     padding-bottom: 20px;
     font-size: var(--text-font-size);
     font-weight: var(--text-font-weight);
-
     
 }
 
@@ -56,6 +56,16 @@ body
     border: none;
     position: relative;
     left: 80px;
+}
+
+#errorMessage 
+{
+    color: red;
+    
+}
+.errorStyle
+{
+    border: 1px solid red;
 }
 
 #container form  label
@@ -77,6 +87,12 @@ body
     bottom: 20px;
 }
 
+.active1 
+{
+    border: 1px solid red;
+}
+
+
 #container form  label:nth-of-type(2)
 {
     top: 20px;
@@ -95,11 +111,12 @@ body
 }
 
 
-#container button
+#container form button
 {
     position: relative;
-    left: 219px;
-    top: 80px;
+    bottom: 0px;
+    left: 200px;
+    top: 180px;
     width: 100px;
     height: 40px;
     background-color: var(--button-color);
@@ -125,6 +142,11 @@ body
     color: black;
     margin-top: 30px;
 
+}
+
+.error 
+{
+    color: red;
 }
 
 #container>div>a:hover
