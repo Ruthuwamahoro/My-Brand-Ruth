@@ -24,6 +24,16 @@ body {
     justify-content: flex-end;
     padding-right: 80px;
 }
+#navigation-link-container nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+#navigation-link-container nav ul li a:hover 
+{
+    color: blue;
+}
+
 
 #img-nav-span
 {

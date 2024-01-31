@@ -26,6 +26,18 @@ body {
 }
 
 
+#navigation-link-container nav ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+#navigation-link-container nav ul li a:hover 
+{
+    color: blue;
+}
+
+
+
 
 #img-nav-span
 {
