@@ -79,10 +79,10 @@ document.getElementById('myForm').addEventListener('submit', (e) => {
   errors = [];
   if (username.value.trim() === "") {
     errors.push("Please provide a username");
-    username.classList.add('errorStyle')
+    username.style.border = '1px solid red';
   }
   if (password.value.trim() === "") {
-    password.classList.add('errorStyle')
+    password.style.border = '1px solid red';
     errors.push("Please provide a password");
   }
   if (password.value.length < 8) {
@@ -92,7 +92,7 @@ document.getElementById('myForm').addEventListener('submit', (e) => {
 
   if(errors.length > 0){
    
-    errorMessage.textContent = errors.join(',')
+    errorMessage.textContent = errors.join(', ')
 
   } else {
     const StorageUsers = {
