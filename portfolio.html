@@ -39,18 +39,26 @@
           </ul>
         </div>
         <nav>
-          <ul>
-            <li>Home</li>
-            <li>About Me</li>
-            <li>Skills</li>
-            <li>Projects</li>
-            <li>Blogs</li>
-            <li>Contact Us</li>
+          <ul id="first-navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects-section">Projects</a></li>
+            <li><a href="#blogs">Blogs</a></li>
+            <li><a href="#contactUs">Contact Us</a></li>
           </ul>
-          
         </nav>
+        
         <a href="" id="menu"><i class="fa-solid fa-bars"></i></a>
       </div>
+      <ul class="display-menu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects-section">Projects</a></li>
+        <li><a href="#blogs">Blogs</a></li>
+        <li><a href="#contactUs">Contact Us</a></li>
+      </ul>
     </section>
     <!-- End of navigatio bar -->
     <!------------------------------------------------------------------------------------------------------------------------------->
@@ -85,7 +93,7 @@
     <!-- End of introduction and  About me section -->
     <!------------------------------------------------------------------------------------------------------------------------------->
     <!-- About me section design -->
-    <section class="about-me-section">
+    <section class="about-me-section" id="about">
         <h1>About Me</h1>
         <p>I'm a passionate web developer, software engineer, and programmer 
             in python, and skilled in HTML, CSS, and JavaScript. I transform ideas 
@@ -105,7 +113,7 @@
     <!-- End of About me section -->
     <!------------------------------------------------------------------------------------------------------------------------------->
     <!-- Skills section design -->
-    <section class="skills-section">
+    <section class="skills-section" id="skills">
         <h1>Skills</h1>
         <div>
           <div class="skills-container">
@@ -156,7 +164,7 @@
     <!-- End of projects section -->
     <!------------------------------------------------------------------------------------------------------------------------------->
     <!-- Blog section design -->
-    <section class="blog-section">
+    <section class="blog-section" id="blogs">
         <h1 id="main-title-blog">Blogs</h1>
         <div>
             <div class="container-blog blog1">
@@ -203,7 +211,7 @@
     <!-- End of blog section -->
     <!------------------------------------------------------------------------------------------------------------------------------->
     <!-- Contact us section -->
-    <section class="contactUs-container">
+    <section class="contactUs-container" id="contactUs">
         <h1>Contact Form</h1>
         <p>Please if you have an question ,suggestion don’t hesitate to contact us by filling the following form</p>
         <form action="" id="form">
@@ -268,6 +276,7 @@
         </div>
     </footer>
     <!-- End of footer section -->
+
+    <script src="portfolio.js"></script>
   </body>
 </html>
-
