@@ -466,8 +466,9 @@ nav ul li:hover
     
     border-radius: 9rem;
     margin: 1.5rem;
-    border-right: 4px solid black;
-    border-top: 4px solid black;
+    border-right: 4px solid rgb(89, 215, 93);
+    border-top: 4px solid rgb(89, 215, 93);
+    
 }
 
 
