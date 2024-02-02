@@ -125,11 +125,24 @@
             
           </div>
           <div class="skills-level-container">
-            <div class="skills-level  level1"><span>90%</span></div>
-            <div class="skills-level level2"><span>92.5%</span></div>
-            <div class="skills-level level3"><span>70%</span></div>
-            <div class="skills-level level4"><span>67%</span></div>
-            <div class="skills-level level5"><span>50%</span></div>
+          
+              <div class="skills-level  level1">
+                <span>90%</span>
+              </div>
+              <div class="skills-level level2">
+                <span>92.5%</span>
+              </div>
+              <div class="skills-level level3">
+                <span>70%</span>
+              </div>
+              <div class="skills-level level4">
+                <span>67%</span>
+              </div>
+              <div class="skills-level level5">
+                <span>50%</span>
+              </div>
+     
+            
           </div>
         </div>
 
@@ -216,12 +229,14 @@
         <p>Please if you have an question ,suggestion don’t hesitate to contact us by filling the following form</p>
         <form action="" id="form">
             <label for="full-name">Full name</label>
-            <input type="text" id="full-name" required>
+            <input type="text" id="full-name">
+            
             <label for="full-name">Email</label>
-            <input type="text" id="full-name" required>
+            <input type="email" id="email">
+            <p id="errorProvidedMessage"></p>
             <label for="full-name">Message</label>
             <label for="">
-              <textarea name="" id="" cols="30" rows="" placeholder="type here..."></textarea>
+              <textarea name="" id="" cols="30" rows="" placeholder="type here..." id="message"></textarea>
             </label>
             
             <button>Send</button>

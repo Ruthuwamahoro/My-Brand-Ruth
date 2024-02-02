@@ -466,10 +466,25 @@ nav ul li:hover
     
     border-radius: 9rem;
     margin: 1.5rem;
-    border-right: 4px solid rgb(89, 215, 93);
-    border-top: 4px solid rgb(89, 215, 93);
+
+    
+    animation: circularBar 1s ease-out infinite;
     
 }
+@keyframes circularBar
+{
+    0%{
+        transform: rotate(0deg);
+        border-top: 1px solid green;
+    }
+    50%{
+        transform: rotate(180deg) ;
+        border-top: 1px solid red;
+        border-right: 1px solid green;
+    }
+}
+
+
 
 
 .skills-level span 

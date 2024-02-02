@@ -10,11 +10,14 @@
     <main>
       <div id="container">
         <h1>Login</h1>
-        <form action="">
+        <form action="" id="myForm">
           <label for="Username">Username</label> <br />
-          <input type="text" id="Username" name="Username" required /> <br />
+          <input type="text" id="Username" name="Username" />
+          <br />
           <label for="password">Password</label> <br />
-          <input type="password" id="password" name="password" required />
+          <input type="password" id="password" name="password" />
+          <p id="errorMessage"></p>
+          <button type="submit" id="submit">Login</button>
         </form>
         <div>
           <a href="">Forget password</a>
@@ -24,9 +27,9 @@
             >Do you have an account?</a
           >
         </div>
-
-        <button>Login</button>
       </div>
     </main>
+    <div id="nst"></div>
+    <script src="login.js"></script>
   </body>
 </html>

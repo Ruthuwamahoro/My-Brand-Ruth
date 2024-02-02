@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="deleteblog.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div id="container">
+      <div id="container-items">
+        <div id="check-icon">
+          <i
+            class="fa-solid fa-circle-exclamation"
+            style="font-size: 70px; color: rgb(223, 101, 101)"
+          ></i>
+        </div>
+        <div class="warning-message" style="font-size: 20px">
+          Are you sure you want to delete this blog? This action cannot be
+          undone.
+        </div>
+        <div>
+          <button>cancel</button>
+          <button>Delete</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.querySelector("button").addEventListener("click", () => {
+        document.querySelector("#container").style.display = "none";
+        window.location.href = "portfolio.html";
+      });
+    </script>
+  </body>
+</html>
