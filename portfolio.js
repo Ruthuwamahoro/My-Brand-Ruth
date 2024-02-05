@@ -48,7 +48,36 @@ document.getElementById('form').addEventListener('submit', (e) => {
         errorMessage.style.fontSize = '15px';
         errorMessage.style.marginBottom = '10px';
     } else {
-        window.location.href = "loading.html"
+        // window.location.href = "loading.html"
+        storingMessage();
+        fullName.value = '';
+        email.value = '';
+        messages.value = '';
+        Notification.requestPermission()
+            .then((permis) => {
+                if (permis === 'granted') {
+                    const notification = new Notification('New Message', {
+                        body: " New Inquiry from contact me",
+                        icon: "images/Myimage.jpg"
+                    })
+                }
+            })
         
     }
 })
+function storingMessage(){
+    const messageObj = JSON.parse(localStorage.getItem('contactMessage')) || [];
+    const inputName = document.getElementById('full-name').value;
+    const inputEmail = document.getElementById('email').value;
+    const inputMessage = document.getElementById('message').value;
+    const newMessage = {
+        id:messageObj.length+1,
+        name:inputName,
+        email:inputEmail,
+        message:inputMessage
+    }
+    messageObj.push(newMessage);
+    localStorage.setItem('contactMessage', JSON.stringify(messageObj))
+    console.log(JSON.parse(localStorage.getItem('contactMessage')))
+}
+

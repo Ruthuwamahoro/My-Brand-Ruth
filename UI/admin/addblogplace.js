@@ -1,28 +1,27 @@
-document.getElementById('blog-Form').addEventListener('submit', (e) => {
-    //prevent default submission
+document.getElementById("blog-Form").addEventListener(('submit'), (e) => {
     e.preventDefault()
-    //get the value from the form
-    const title = document.getElementById('title').value;
-    const content = document.getElementById('content').value;
-
-
-    //create localstorage or reteieve the existing
-    const blogs = JSON.parse(localStorage.getItem('blogContent')) || [];
-    const newBlog = {
-        id: uuidv4(),
-        title,
-        content
-    }
-
-    blogs.push(newBlog);
-    localStorage.setItem('blogContent', JSON.stringify(blogs));
-    alert("successfully added")
-    window.location.href = './addblogs.html';
-    
-    
-    
-
+    addBlogs()
 })
+// Check if there is existing data in local storage
+let blog = JSON.parse(localStorage.getItem("blogContent")) || [];
+
+function addBlogs() {
+    let newTitle = document.getElementById("title").value;
+    let newContent = document.getElementById("content").value;
+    let newBlog = {
+        id: blog.length + 1,
+        title: newTitle,
+        content: newContent
+    };
+    blog.push(newBlog);
+
+    // Update the local storage with the modified blog array
+    localStorage.setItem("blogContent", JSON.stringify(blog));
+    window.location.href = "./addblogs.html";
+}
+
+
+
 
 
 

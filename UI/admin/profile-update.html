@@ -27,6 +27,7 @@
           <img
             src="./images/Myimage.jpg"
             alt="my image"
+            class="synced-image"
             
           />
           <nav>
@@ -46,6 +47,7 @@
         <img
             src="./images/Myimage.jpg"
             alt="my image" style="width: 100px;height: 100px; border-radius: 100px;margin-left: 20px;"
+            class="synced-image"
             
           />
 
@@ -80,8 +82,15 @@
         <div id="userprofilecontainer">
             <h1>User profile</h1>
             <div>
-                <p>Upload picture</p>
-                <button style="font-size: 15px;">Choose File</button>
+                <img src="images/Myimage.jpg" alt="" style="width: 130px; height: 140px;border-radius: 50%;" class="synced-image">
+                <div>
+                  <label for="input-file">Update Image</label>
+                </div>
+                
+                <div>
+                  <input type="file" accept="image/jpg, image/jpeg, image/png" id="input-file">
+                </div>
+                
             </div>
            
         </div>
@@ -89,6 +98,7 @@
 
 
     </section>
+    <script src="updateprofile.js"></script>
     
   </body>
 </html>

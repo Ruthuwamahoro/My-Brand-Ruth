@@ -10,6 +10,15 @@ body {
     background-color: #EBF0F8;
     font-family:'Jost', sans-serif;
 }
+.body-opacity 
+{
+    opacity: 0.3;
+}
+
+.delete-message-opacity
+{
+    opacity: 1;
+}
 
 /* Navigation menu */
 
@@ -312,14 +321,14 @@ body {
     height: fit-content;
 }
 
-.container-action a:hover
+.container-action button:hover
 {
     color: red;
 }
 
 
 
-.container-action a:nth-of-type(1){
+.container-action button:nth-of-type(1){
     background-color: var(--update-background-color,#C5B1B1);
     border: none;
     border-radius: 5px;
@@ -334,14 +343,14 @@ body {
     text-decoration: none;
 }
 
-.container-action a:nth-of-type(1):active, .container-action a:nth-of-type(2):active
+.container-action button:nth-of-type(1):active, .container-action button:nth-of-type(2):active
 {
     background-color: #dbd2d2;
     color: blue;
 }
 
 
-.container-action a:nth-of-type(2){
+.container-action .delete-btn:nth-of-type(2){
     background-color: var(--update-background-color,#CE9D9D);
     border: none;
     border-radius: 5px;
@@ -356,16 +365,196 @@ body {
     text-decoration: none;
 }
 
+.empty-blog
+{  
+    width: 400px;
+    height: 100px;
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
 
-
+}
+.empty-blog p 
+{
+    text-align: center;
+    font-size: var(--text-font-size);
+    font-weight: var(--text-font-weight);
+   padding-top: 30px;
+    
+}
 
 
 /* End of blog design */
+/* ---------------------------------------------------------------------------------------------------- */
+
+/* adding style to update section */
+#addblog-container
+{ 
+    display: grid;
+    grid-template-columns: 1fr;
+    width: fit-content;
+    background-color: #EBF0F8;
+    border-radius: 30px;
+    height: fit-content;
+   
+    margin-top: 50px;
+    padding-bottom: 50px;
+    
+
+}
+#addblog-container h1
+{
+    text-align: center;
+    margin-top: 30px;
+    font-weight: bolder;
+    font-size: 40px;
+    color: black;
+
+}
+
+#addblog-container form label 
+{
+    font-size: 20px;
+    font-weight: var(--text-font-weight);
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    color: black;
+
+}
+
+#addblog-container form input 
+{
+    width: 600px;
+    height: 70px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+}
+
+#addblog-container form textarea
+{
+    width: 600px;
+    height: 300px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    padding-left: 10px;
+    box-sizing: border-box;
+
+}
+
+
+#addblog-container form button
+{
+    background-color: var(--update-background-color,#CE9D9D);
+    border: none;
+    border-radius: 5px;
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 150px;
+    height: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: black;
+    text-align: center;
+    font-size: 17px;
+    font-weight: var(--text-font-weight);
+    transform: translate(200px);
+
+}
+
 
 
 
 /* End of activities design */
 /* ----------------------------------------------------------------------------------------------- */
+/* style for delete message */
+#container 
+{
+    width: 420px;
+    margin: auto;
+    position: relative;
+    
+    transform: translate(150%, 200px);
+    position: fixed;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    
+}
+
+#container-items 
+{
+    display: block;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#container-items div
+{
+    text-align: center;
+    font-size: 2em;
+}
+
+#container-items div .fa-check 
+{
+    color: green;
+    font-size: 2em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+
+    
+}
+
+#container-items div button 
+{
+    background-color: rgb(5, 5, 2);
+    border: none;
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-size: 17px;
+    font-weight: var(--text-font-weight);
+    margin-top: 20px;
+    margin-bottom: 40px;
+    
+}
+
+#container-items div button:hover
+{
+    color: black;
+    background-color: rgb(192, 184, 184);
+}
+
+#check-icon
+{
+    display: inline-block;
+  
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    margin-top: 50px;
+    margin-bottom: 20px
+    
+;
+}
+
+
+/* end of style */
+
+
+
 /* Responsive design */
 /* for mobile screen */
 

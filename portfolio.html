@@ -126,20 +126,21 @@
           </div>
           <div class="skills-level-container">
           
-              <div class="skills-level  level1">
-                <span>90%</span>
+              <div class="skills-level  level1" data-percent="90">
+                <!-- <span>90%</span> -->
+                90%
               </div>
-              <div class="skills-level level2">
-                <span>92.5%</span>
+              <div class="skills-level level2" data-percent="92.5">
+                92.5%
               </div>
-              <div class="skills-level level3">
-                <span>70%</span>
+              <div class="skills-level level3" data-percent="70">
+                70%
               </div>
-              <div class="skills-level level4">
-                <span>67%</span>
+              <div class="skills-level level4" data-percent="67">
+                67%
               </div>
-              <div class="skills-level level5">
-                <span>50%</span>
+              <div class="skills-level level5" data-percent="50">
+                50%
               </div>
      
             
@@ -165,7 +166,7 @@
                 <p>This app ensures the functionality of API,javascript together with HTML,CSS to generate random advice app.just watch magic</p>
                 <button class="two-button">DEMO</button>
             </div>
-            <div class="project-div3 single-project">
+            <div class="project-div3 single-project" onmouseover="moveLeft()">
                 <h1>Employee Management <br>System</h1>
                 <p>This system is managing the employee data by using RESTAPI and MongoDb to manage and store data</p>
                 <button>DEMO</button>
@@ -236,7 +237,7 @@
             <p id="errorProvidedMessage"></p>
             <label for="full-name">Message</label>
             <label for="">
-              <textarea name="" id="" cols="30" rows="" placeholder="type here..." id="message"></textarea>
+              <textarea name="" cols="30" rows="" placeholder="type here..." id="message"></textarea>
             </label>
             
             <button>Send</button>

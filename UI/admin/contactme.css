@@ -154,7 +154,7 @@ body {
 
 #separator {
     width: 3px;
-    height: 100%;
+    height: 887px;
     background-color: rgb(148, 145, 145);
     margin-left: 50px;
     margin-right: 10px;
@@ -164,16 +164,8 @@ body {
 /* Start of design of Contact Overview */
 
 
-#contact-overview-section {
-    margin-top: 10px;
-<<<<<<< HEAD
-    margin-left: 100px;
-    width: 100%;
-    padding-right: 100px;
-=======
-    margin-right: 60px;
->>>>>>> ft-login-page
-
+#menu {
+    display: none;
 }
 
 
@@ -255,9 +247,9 @@ tbody>tr>td:nth-of-type(4)>button:active
 
 /* End of Activities styles */
 /* --------------------------------------------------------------------------------------------------------------------------------- */
-<<<<<<< HEAD
 
 
+/* 
 @media screen and (max-width: 768px) {
     #navigation-menu-container
     {
@@ -340,7 +332,7 @@ tbody>tr>td:nth-of-type(4)>button:active
 
 
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+/* @media screen and (min-width: 768px) and (max-width: 1024px) {
     #navigation-menu-container
     {
         display: flex;
@@ -409,6 +401,4 @@ tbody>tr>td:nth-of-type(4)>button:active
         align-items: center;
         width: 100%;
     }
-}
-=======
->>>>>>> ft-login-page
+} */ 
