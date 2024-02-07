@@ -17,10 +17,41 @@ menu.addEventListener("click", (e) => {
 });
 
 
+
+//working with blogs and display it in the portfolio
+
+const blogs = JSON.parse(localStorage.getItem("blogContent"))
+const blogContainer = document.querySelector(".container-blog")
+let element = "";
+blogs.forEach((rec) => {
+    element += `
+    <div>
+        <h1>${rec.title}</h1>
+        <p>${rec.description}</p>
+        <div id="read-more">
+            <a href="" style="margin-left: 30px;">Read more</a>
+            <a href=""><i class="fa-solid fa-circle-right"></i></a>
+        </div>
+    </div>
+    
+    `
+})
+blogContainer.innerHTML = element;
+
+
+
+//end of working with blogs
+
+
 const fullName = document.getElementById('full-name');
 const email = document.getElementById('email');
 const messages = document.getElementById('message')
 const errorMessage = document.getElementById('errorProvidedMessage')
+//adding some padding from the form input
+fullName.style.paddingLeft = '20px';
+email.style.paddingLeft = '20px';
+messages.style.padding = '30px';
+//end of padding
 document.getElementById('form').addEventListener('submit', (e) => {
     e.preventDefault()
     errors = []
