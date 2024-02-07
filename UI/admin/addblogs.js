@@ -1,45 +1,8 @@
-// function displayBlog() {
-//     const blogs = JSON.parse(localStorage.getItem('blogContent'));
-//     const mainDiv = document.getElementById('blogs-container-actions');
-
-//     blogs.forEach((blog) => {
-//         //creating div for storage
-//         let div1 = document.createElement('div');
-//         div1.className = 'main-container';
-//         let div2 = document.createElement('div');
-//         div2.className = 'container-action';
-//         let button1 = document.createElement('a');
-//         button1.textContent = 'UPDATE';
-//         button1.href = `./updateblog.html#id=${blog.id}`
-//         button1.className = 'update-btn';
-//         let button2 = document.createElement('a');
-//         button2.textContent = 'DELETE';
-//         button2.href = `./deleteblog.html#id=${blog.id}`
-//         button2.className = 'delete-btn';
-
-//         //creating p tag to store the blog
-//         let p = document.createElement('p');
-//         p.textContent = blog.title;
-        
-//         //appending paragraph to the div
-//         div2.append(p);
-        
-//         //appending div to the div
-//         div1.append(div2);
-        
-//         //appending div to the main div
-//         mainDiv.insertBefore(div1, mainDiv.firstChild);
-
-//         //appending button to the div
-//         div2.append(button1, button2);
-
-
-       
-//     });
-// }
-
-// displayBlog();
-
+//authentication to this page
+let users = JSON.parse(localStorage.getItem("StoreUsers"));
+if (!users || !users.isAuthenticated) {
+    window.location.href = "../login-page/login.html";
+}
 
 document.getElementById('container').style.display = 'none'
 function displayBlog(){
@@ -79,6 +42,7 @@ function update(id){
     let obj = blog.find(rec => rec.id === id);
     document.getElementById('utitle').value = obj.title;
     document.getElementById('ucontent').value = obj.content;
+    document.getElementById('udescription').value = obj.description;
     document.querySelector('.id').value = obj.id;  
 }
 
@@ -87,13 +51,14 @@ function edit(){
     let newId = parseInt(document.querySelector('.id').value);
     let newTitle = document.getElementById('utitle').value;
     let newContent = document.getElementById('ucontent').value;
+    let newDescription = document.getElementById('udescription').value;
     if(!newTitle || !newContent){
         console.error("Title or content is not found");
         return;
     }
     let dataIndex = blog.findIndex(rec => rec.id === newId);
 
-    blog[dataIndex] = {id:newId, title:newTitle,content:newContent};
+    blog[dataIndex] = {id:newId, title:newTitle,content:newContent, description:newDescription};
     localStorage.setItem('blogContent', JSON.stringify(blog));
 
     document.querySelector('#addblog-container').style.display = 'none';
@@ -108,35 +73,6 @@ document.getElementById('submit').addEventListener('click', (e) => {
     e.preventDefault();
     edit()
 })
-// function deleteBlog(id){
-//     const blog = JSON.parse(localStorage.getItem('blogContent'));
-//     const deleteMessage = document.getElementById('container');
-//     deleteMessage.style.display = 'block';
-//     // document.body.classList.add('body-opacity')
-//     // deleteMessage.classList.remove('body-opacity')
-//     document.getElementById('cancel-button').addEventListener(('click'), (e) => {
-//         e.preventDefault()
-//         deleteMessage.style.display = 'none';
-//     })
-//     document.getElementById('del').addEventListener('click', (e) => {
-//         e.preventDefault()
-//         const dataIndex = blog.findIndex(rec => rec.id === id);
-//         if (dataIndex !== -1) {
-//             blog.splice(dataIndex, 1);
-//             localStorage.setItem('blogContent', JSON.stringify(blog));
-//             deleteMessage.style.display = 'none';
-//             displayBlog();
-//         } 
-//         else {
-//             console.error("Blog with the specified ID not found.");
-//         }
-//     })
-    
-    
-
-// }
-
-
 
 
 function deleteBlog(id){
@@ -179,6 +115,36 @@ function deleteBlog(id){
     
 
 }
+
+
+const syncedImages = document.querySelectorAll('.synced-image');
+const inputImage = document.getElementById('input-file');
+
+function updateAllImages(sourceSrc) {
+    syncedImages.forEach(image => {
+        image.src = sourceSrc;
+    });
+    localStorage.setItem("storedImage", sourceSrc);
+}
+
+let img = localStorage.getItem("storedImage");
+if (img) {
+    updateAllImages(img);
+}
+
+inputImage.onchange = function () {
+    const sourceSrc = URL.createObjectURL(inputImage.files[0]);
+    updateAllImages(sourceSrc);
+}
+
+
+
+
+
+
+
+
+
 
 
 

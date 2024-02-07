@@ -1,3 +1,9 @@
+//authentication to this page
+let users = JSON.parse(localStorage.getItem("StoreUsers"));
+if (!users || !users.isAuthenticated) {
+    window.location.href = "../login-page/login.html";
+}
+
 const syncedImages = document.querySelectorAll('.synced-image');
 const inputImage = document.getElementById('input-file');
 

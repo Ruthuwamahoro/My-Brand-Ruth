@@ -18,7 +18,7 @@
 body
 {
     font-family: 'Jost', sans-serif;
-    background-color: white;
+    background-color: rgb(220, 236, 229);
 }
 
 
@@ -26,7 +26,7 @@ body
 {
     background-color: var(--container-background-color);
     width: 500px;
-    height: 600px;
+    height: 690px;
     margin: 90px auto;
 
 }
@@ -39,6 +39,12 @@ body
     font-size: var(--text-font-size);
     font-weight: var(--text-font-weight);
     
+}
+#container img {
+    margin: auto;
+    display: block;
+    position: relative;
+    top: 30px;
 }
 
 #container form 
