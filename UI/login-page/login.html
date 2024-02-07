@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login page</title>
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main>
+      <div id="container">
+        <img
+          src="../images/unknown.png"
+          width="100px"
+          height="100px"
+          style="border-radius: 50%"
+        />
+        <h1>Login</h1>
+        <form action="" id="myForm">
+          <label for="Username">Username</label> <br />
+          <input type="text" id="Username" name="Username" />
+          <br />
+          <label for="password">Password</label> <br />
+          <input type="password" id="password" name="password" />
+          <p id="errorMessage"></p>
+          <button type="submit" id="submit">Login</button>
+        </form>
+        <div>
+          <a href="">Forget password</a>
+        </div>
+        <div>
+          <a href="" style="position: relative; top: 20px"
+            >Do you have an account?</a
+          >
+        </div>
+      </div>
+    </main>
+    <div id="nst"></div>
+    <script src="login.js"></script>
+  </body>
+</html>

@@ -25,6 +25,16 @@ body {
     padding-right: 80px;
 }
 
+#navigation-link-container nav ul li a 
+{
+    text-decoration: none;
+    color: black;
+
+}
+
+#navigation-link-container nav ul li a:hover       
+{color: blue}
+
 #img-nav-span
 {
     display: flex;
@@ -133,15 +143,16 @@ body {
     margin-left: 90px;
 }
 
-#navigation-link-container nav ul li a{
+
+#navigation-link-container nav ul li a 
+{
     text-decoration: none;
     color: black;
+
 }
 
-#navigation-link-container nav ul li a:hover 
-{
-    color: blue;
-}
+#navigation-link-container nav ul li a:hover       
+{color: blue;}
 
 
 #navigation-link-container div>span {
@@ -154,12 +165,11 @@ body {
 
 #separator {
     width: 3px;
-    height: 800px;
+    height: 100%;
     background-color: rgb(148, 145, 145);
     margin-left: 50px;
     margin-right: 10px;
 }
-
 
 
 /* End Navigation menu */
@@ -358,5 +368,3 @@ tbody>tr>td:nth-of-type(2){
         
     }
 }
-
-
