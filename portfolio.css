@@ -259,17 +259,17 @@ nav ul li:hover
 
 .projects-section-container div:nth-of-type(1)
 {
-    background-image: url(images/calculator3.webp);
+    background-image: url(./UI/images/calculator3.webp);
 }
 
 .projects-section-container div:nth-of-type(2) 
 {
-    background-image: url(images/pankaj-patel-ruiU36AR5zo-unsplash.jpg);
+    background-image: url(./UI/images/pankaj-patel-ruiU36AR5zo-unsplash.jpg);
 }
 
 .projects-section-container div:nth-of-type(3)
 {
-    background-image: url(images/calculator3.webp);
+    background-image: url(./UI/images/calculator3.webp);
 }
 
 .single-project 
