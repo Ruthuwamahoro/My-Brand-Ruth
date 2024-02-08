@@ -81,8 +81,14 @@
                 <label for="description">Description</label>
                 <input type="text" id="description" placeholder="Enter short description"> <br>
                 <label for="">Content</label><br>
-                <textarea name="content" id="content" cols="30" rows="10"></textarea><br>
-                <button type="submit">UPDATE</button><br>
+                <textarea name="content" id="content" cols="30" rows="10" style="display: none;"></textarea><br>
+                <!-- <button type="submit" id="submit">UPDATE</button><br> -->
+            </form>
+            <div id="editor-container">
+              <textarea name="content" id="content" id="editor" cols="30" rows="10"></textarea> 
+            </div>
+            <form action="" id="blog-Form">
+              <button type="submit" id="submit">UPDATE</button><br>
             </form>
         </div>
         <script type="module" src="addblogplace.js"></script>

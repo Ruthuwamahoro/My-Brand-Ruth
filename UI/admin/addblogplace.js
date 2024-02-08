@@ -1,3 +1,44 @@
+//quilljs
+
+
+//customization of the toolbar 
+let toolbarFunctionality = [
+    ['bold', 'italic', 'underline', 'strike'],
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+    [{ 'font': [] }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    [{ 'indent': '-1' }, { 'indent': '+1' }],
+    [{ 'color': [] }, { 'background': [] }],
+    [{ 'align': [] }],
+    ['clean']
+
+]
+
+
+
+let quill = new Quill('#editor-container', {
+    modules: {
+        toolbar: toolbarFunctionality
+    },
+    theme: 'snow'
+})
+function workingWithContent(){
+    var content = quill.root.textContent;
+    document.getElementById('content').value = content;
+}
+
+
+quill.on('text-change', function() {
+    workingWithContent()
+});
+
+
+
+
+//end of quilljs
+
+
+
 //authentication to this page
 let users = JSON.parse(localStorage.getItem("StoreUsers"));
 if (!users || !users.isAuthenticated) {
@@ -6,7 +47,7 @@ if (!users || !users.isAuthenticated) {
 
 
 
-document.getElementById("blog-Form").addEventListener(('submit'), (e) => {
+document.getElementById("submit").addEventListener(('click'), (e) => {
     e.preventDefault()
     addBlogs()
     // newAddedBlog()
@@ -17,7 +58,7 @@ let blog = JSON.parse(localStorage.getItem("blogContent")) || [];
 
 function addBlogs() {
     let newTitle = document.getElementById("title").value;
-    let newContent = document.getElementById("content").value;
+    let newContent = quill.root.textContent;
     let newDescription = document.getElementById("description").value;
     let newBlog = {
         id: blog.length + 1,
@@ -29,7 +70,7 @@ function addBlogs() {
     
     // Update the local storage with the modified blog array
     localStorage.setItem("blogContent", JSON.stringify(blog));
-    
+    console.log(blog)
     window.location.href = "./addblogs.html";
 }
 
@@ -55,6 +96,7 @@ inputImage.onchange = function () {
     const sourceSrc = URL.createObjectURL(inputImage.files[0]);
     updateAllImages(sourceSrc);
 }
+
 
 
 
