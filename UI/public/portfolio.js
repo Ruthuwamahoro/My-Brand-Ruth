@@ -85,7 +85,7 @@ form.addEventListener('submit', function (e) {
             if (permis === 'granted') {
                 var notification_1 = new Notification('New Message', {
                     body: " New Inquiry from contact me",
-                    icon: "images/Myimage.jpg"
+                    icon: "../images/Myimage.jpg"
                 });
                 setTimeout(function () {
                     notification_1.close();

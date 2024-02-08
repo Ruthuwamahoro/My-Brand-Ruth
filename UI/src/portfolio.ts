@@ -4,7 +4,7 @@
 //get menu from DOM and add event listener for click on it
 const menu = document.getElementById("menu")! as HTMLAnchorElement;
 const ul = document.querySelector(".display-menu")! as HTMLUListElement;
-menu.addEventListener("click", (e) => {
+menu.addEventListener("click", (e:Event) => {
 
     //check if menu is already open or closed, then perform appropriate action
 
@@ -109,7 +109,7 @@ form.addEventListener('submit', (e:Event) => {
                 if (permis === 'granted') {
                     const notification = new Notification('New Message', {
                         body: " New Inquiry from contact me",
-                        icon: "images/Myimage.jpg"
+                        icon: "../images/Myimage.jpg"
                     })
                     setTimeout(() => {
                         notification.close()
@@ -145,5 +145,6 @@ function storingMessage(): void{
         message:inputMessageValue
     }
     messageObj.push(newMessage);
-    localStorage.setItem('contactMessage', JSON.stringify(messageObj))
+    return localStorage.setItem('contactMessage', JSON.stringify(messageObj))
+    
 }
