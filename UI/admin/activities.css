@@ -210,10 +210,12 @@ tbody>tr>td, thead>tr>th{
     padding-top: 12px;
     padding-bottom: 12px;
     padding-left: 50px;
+    font-size: 17px;
 }
 
 tbody>tr>td:nth-of-type(2){
     color: grey;
+    font-size: 17px;
 }
 /* End of activities design */
 /* ----------------------------------------------------------------------------------------------- */
