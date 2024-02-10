@@ -217,7 +217,7 @@
     <div id="thanks-message">
       <h2>Thanks You for Reading <i class="fa-solid fa-book"></i></h2>
     </div>
-    <section id="comment-section">
+    <!-- <section id="comment-section">
       <div style="margin-top: 100px;">
         <div>
           <span
@@ -534,6 +534,45 @@
           </div>
         </div>
       </div>
+    </section> -->
+    <section class="comment">
+      <div class="comment-container">
+        <div>
+          <span
+            style="
+              display: flex;
+              justify-content: flex-start;
+              margin-left: 50px;
+              margin-top: 10px;
+              margin-bottom: 20px;
+            "
+            ><h3 style="font-weight: 900px"><span id="number-comment"></span> comments</h3>
+            <a href="" style="position: relative;  left: 15px"
+              ><i class="fa-solid fa-caret-down"></i></a
+          ></span>
+        </div>
+        <div>
+          <img src="../images/unknown.png" alt="" style="width: 50px; height: 50px; border-radius: 50% ;" id="imagen"/>
+          <input type="text" placeholder="Enter Your comment" id="comment-section">
+          <button onclick="postComment()">Post</button>
+        </div>
+        <div>
+          <div id="commentedMessage">
+            <div class="com">
+              <!-- <img src="../images/unknown.png" alt="" style="width: 50px; height: 50px; border-radius: 50% ;"/> -->
+              <!-- <div class="side-info">
+                <p id="comm"></p>
+                <p id="messagem"></p>
+                <div id="replyOnPost" style="display: none;">
+                  <img src="../images/unknown.png" alt="" style="width: 50px; height: 50px;">
+                  <input type="text">
+                  <button>reply</button>
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
     <section>
       <div class="recent-posts">
@@ -607,6 +646,6 @@
           <span>Back to the top</span>
       </div>
   </footer>
-  <script src="blog.js"></script>
+  <script src="blog1.js"></script>
   </body>
 </html>

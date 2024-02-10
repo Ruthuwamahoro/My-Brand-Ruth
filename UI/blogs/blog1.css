@@ -169,7 +169,7 @@ ul li:hover {
 /* ------------------------------------------------------------------------------------------------- */
 
 /* start of comment section */
-
+/* 
 #comment-section {
     background-color: #EBF0F8;
     width: 100%;
@@ -206,7 +206,37 @@ ul li:hover {
 ::placeholder::after{
     content: var(--input-text-underline);
 
+} */
+
+.comment {
+    background-color: #EBF0F8;
+    width: 100%;
 }
+
+.comment-container{
+    margin-left: 100px;
+    padding:20px 0px;
+}
+.com {
+    display: flex;
+    margin-top: 40px;
+    align-items: center;
+}
+#comm, .fa-regular , .fa-solid, .fa-reply {
+    font-size: 18px;
+    margin-left: 20px;
+    color: black;
+    
+}
+#messagem {
+    font-size: 12px;
+    margin-left: 20px;
+    font-weight: 900;
+}
+
+
+
+
 /* Start of Recent-post section */
 
 
