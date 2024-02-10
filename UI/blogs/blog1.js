@@ -1,18 +1,3 @@
-
-
-
-// const clickLike = document.querySelector("#fa-regular");
-// const clickLiken = document.querySelector("#fa-solid");
-// clickLike.addEventListener(('click'), (e) => {
-//     e.preventDefault()
-//     clickLike.style.display = 'none';
-//     clickLiken.style.display = 'block';
-    
-// })
-
-
-
-
 //working on comment section
 function load(){
     const comment = JSON.parse(localStorage.getItem("storedComment")||"[]");
@@ -50,9 +35,9 @@ function displayComment (){
                     <p id="comm">${en.commentPost}</p>
                     <span><i class="fa-regular fa-thumbs-up"></i></span>
                     <span><i class="fa-regular fa-thumbs-down"></i></span>
-                    <a href="" id="reply"><i class="fa-solid fa-reply"></i></a>
+                    <a href="" id="reply-${en.id}" class="reply-link"><i class="fa-solid fa-reply"></i></a>
                     <span id="messagem" > ${en.addedAt}</span>
-                    <div id="replyOnPost">
+                    <div id="replyOnPost" class="reply-container" hidden>
                     <img src="../images/Myimage.jpg" alt="" style="width: 30px; height: 30px; border-radius: 50%">
                     <input type="text"/>
                     <button id="replyButton">Reply</button>
@@ -62,7 +47,19 @@ function displayComment (){
             `
             
         })
-        commentContainer.innerHTML = elem
+        commentContainer.innerHTML = elem;
+        const doc = document.querySelectorAll(".reply-link");
+        doc.forEach((n) => {
+            const rep = document.getElementById("reply-1");
+            rep.addEventListener(('click'), () => {
+                 
+            })
+        })
+        
+        // reply button event listener
+        document.getElementById("replyButton").addEventListener("click", () => {
+            // Add your code here for the event listener
+        });
 
     }catch(error){
         console.log(error)
@@ -74,6 +71,15 @@ window.addEventListener("load", () => {
 })
 
 //reply on comment
+
+
+
+
+
+
+
+
+
 
 
 

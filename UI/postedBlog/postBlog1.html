@@ -8,7 +8,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="blog1.css" />
+    <link rel="stylesheet" href="../blogs/blog1.css" />
   </head>
   <body>
     <section>
@@ -88,131 +88,7 @@
       </div>
     </section>
     <section id="main-content-of-blog">
-      <div>
-        <h5>CRUD OPERATIONS</h5>
-        <p>
-          Certainly! Here's a revised version of the passage focusing on general
-          information about CRUD operations: <br />Incorporated within this
-          project are essential CRUD (Create, Read, Update, Delete) operations,
-          strategically designed to streamline data management. These operations
-          enhance the user experience by seamlessly interacting with the
-          application's features: <br />Create: Dynamically introduce new items
-          or entities into the system. <br />Read: Retrieve and display existing
-          data, providing a comprehensive overview. <br />Update: Modify and
-          refine entries to ensure the information remains current.
-          <br />Delete: Eliminate outdated or unnecessary items, maintaining
-          relevance and efficiency."
-        </p>
-      </div>
-      <div>
-        <h5>CRUD OPERATIONS</h5>
-        <p>
-          Certainly! Here's a revised version of the passage focusing on general
-          information about CRUD operations: Incorporated within this project
-          are essential CRUD (Create, Read, Update, Delete) operations,
-          strategically designed to streamline data management. <br />
-          These operations enhance the user experience by seamlessly interacting
-          with the application's features: <br />
-          Create: Dynamically introduce new items or entities into the system.
-          <br />
-          Read: Retrieve and display existing data, providing a comprehensive
-          overview. <br />
-          Update: Modify and refine entries to ensure the information remains
-          current. <br />Delete: Eliminate outdated or unnecessary items,
-          maintaining relevance and efficiency."
-        </p>
-      </div>
-      <div>
-        <h5>CREATE in RESTAPI</h5>
-        <p>
-          In the REST API architecture, the "Create" operation plays a vital
-          role in allowing clients to add new resources to the system. Here's a
-          simplified guide: <br />1.HTTP Method: Utilize the HTTP POST method to
-          initiate the "Create" operation. Send a request to the designated
-          endpoint, typically representing the resource collection. <br />
-          2.Request Body: Incorporate essential information for the new resource
-          within the request body, typically formatted in JSON or XML for clear
-          communication. <br />
-          3.Server-Side Processing: Upon receiving the request, the server
-          meticulously processes the incoming data, conducts necessary
-          validations, and proceeds to create a new resource within the system.
-          <br />4.Response: Following the server-side processing, the server
-          issues a response featuring an appropriate HTTP status code, such as
-          201 Created. Additionally, the response body contains pertinent
-          details about the newly created resource, ensuring comprehensive
-          feedback to the client. This API endpoint (/projects) is an
-          illustrative representation; adapt it to your specific API structure.
-        </p>
-      </div>
-      <div>
-        <h5>RETRIEVE in RESTAPI</h5>
-        <p>
-          In a REST API, the "Retrieve" operation involves fetching existing
-          resources from the server. Follow these steps: <br />1.HTTP Method:
-          Utilize the HTTP GET method to initiate the "Retrieve" operation. Send
-          a request to the specific endpoint representing the resource or a
-          collection of resources. <br />
-          2.Endpoint: Specify the endpoint that corresponds to the resource you
-          want to retrieve. For example, if you're retrieving a list of blog
-          posts, the endpoint might be /posts. <br />
-          3.Response: The server processes the request and responds with an HTTP
-          status code, typically 200 OK for a successful retrieval. The response
-          body contains the details of the requested resource(s), often
-          formatted in JSON or XML. This example requests a list of blog posts
-          from the /posts endpoint. Adapt the endpoint to fit the structure of
-          your specific API.
-        </p>
-      </div>
-      <div>
-        <h5>UPDATE in RESTAPI</h5>
-        <p>
-          In a REST API, the "Update" operation involves modifying existing
-          resources on the server. Here's a guide to performing the "Update"
-          operation: <br />
-          1.HTTP Method: Utilize the HTTP PUT or PATCH method to initiate the
-          "Update" operation. Send a request to the specific endpoint
-          representing the resource you want to update. <br />
-          2.Endpoint: Specify the endpoint that corresponds to the resource you
-          want to modify. For example, if you're updating a specific blog post,
-          the endpoint might be /posts/{post_id}, where {post_id} is the unique
-          identifier of the post. <br />
-          3.Request Body: Include the updated information for the resource in
-          the request body, often formatted in JSON or XML. <br />
-          4.Response: The server processes the request and responds with an HTTP
-          status code, typically 200 OK for a successful update. <br />
-          The response body may contain details of the modified resource.
-          <br />Consider additional features: <br />
-          Partial Updates: If your API supports partial updates, you can use the
-          HTTP PATCH method instead of PUT to update specific fields of a
-          resource.- <br />
-          Conditional Updates: Implement conditional update mechanisms, such as
-          ETag headers, to ensure that updates occur only if the resource is in
-          the expected state.
-        </p>
-      </div>
-      <div>
-        <h5>DELETE in RESTAPI</h5>
-        <p>
-          <br />1.HTTP Method: Utilize the HTTP DELETE method to initiate the
-          "Delete" operation. Send a request to the specific endpoint
-          representing the resource you want to delete. <br />
-          2.Endpoint: Specify the endpoint that corresponds to the resource you
-          want to remove. For instance, if you're deleting a specific blog post,
-          the endpoint might be /posts/{post_id}, where {post_id} is the unique
-          identifier of the post. <br />
-          3.Response: The server processes the request and responds with an HTTP
-          status code, typically 204 No Content for a successful deletion. The
-          absence of a response body is common for successful DELETE requests.
-          <br />
-          Consider additional features: <br />Soft Deletes: Instead of
-          permanently removing a resource, consider implementing a soft delete
-          where the resource is marked as deleted but retained in the database
-          for historical purposes. <br />
-          Cascading Deletes: If deleting a resource should also trigger the
-          deletion of associated resources (e.g., comments on a blog post),
-          implement cascading deletes.
-        </p>
-      </div>
+      
     </section>
     <div id="thanks-message">
       <h2>Thanks You for Reading <i class="fa-solid fa-book"></i></h2>
@@ -328,6 +204,7 @@
           <span>Back to the top</span>
       </div>
   </footer>
-  <script src="blog1.js"></script>
+  <script src="postBlog1.js"></script>
+  <script src="../blogs/blog1.js"></script>
   </body>
 </html>
