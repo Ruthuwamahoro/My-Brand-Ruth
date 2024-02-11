@@ -4,6 +4,7 @@ if (!users || !users.isAuthenticated) {
     window.location.href = "../login-page/login.html";
 }
 
+
 document.getElementById('container').style.display = 'none'
 function displayBlog(){
     const blog = JSON.parse(localStorage.getItem('blogContent'));
@@ -21,7 +22,7 @@ function displayBlog(){
             //creating div for storage
             elements += `<div class="main-container">
                 <div class="container-action">
-                    <p> ${record.title}</p>
+                    <p id="title"> ${record.title}</p>
                     <button class="update-btn" onclick={update(${record.id})}>UPDATE</button>
                     <button class="delete-btn" onclick=deleteBlog(${record.id})>DELETE</button>
                 </div>
@@ -136,6 +137,11 @@ inputImage.onchange = function () {
     const sourceSrc = URL.createObjectURL(inputImage.files[0]);
     updateAllImages(sourceSrc);
 }
+
+
+
+
+
 
 
 

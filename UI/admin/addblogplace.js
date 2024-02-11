@@ -64,7 +64,8 @@ function addBlogs() {
         id: blog.length + 1,
         title: newTitle,
         content: newContent,
-        description: newDescription
+        description: newDescription,
+        updatedAt: new Date().toLocaleString()
     };
     blog.push(newBlog);
     
