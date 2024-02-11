@@ -272,6 +272,12 @@ nav ul li:hover
     background-image: url(./UI/images/calculator3.webp);
 }
 
+.projects-section-container div:nth-of-type(4)
+{
+    background-image: url(./UI/images/pankaj-patel-ruiU36AR5zo-unsplash.jpg);
+}
+
+
 .single-project 
 {
     width: 100%;
