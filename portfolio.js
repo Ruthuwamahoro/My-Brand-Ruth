@@ -110,31 +110,6 @@ if(blogs.length > 4){
     blogContainer.innerHTML = element;
 }
     
-    
-
-
-
-// if (blogs.length === 3 || blogs.length === 4){
-//     const blogContainer = document.querySelector(".container-blog.blog2");
-//     let element = "";
-//     blogs.forEach((rec) => {
-//             element += `
-//             <div>
-//                 <h1>${rec.title}</h1>
-//                 <p>${rec.description}</p>
-//                 <div id="read-more">
-//                     <a href="" style="margin-left: 30px;">Read more</a>
-//                     <a href=""><i class="fa-solid fa-circle-right"></i></a>
-//                 </div>
-//             </div>
-            
-//             `
-//     })
-//     blogContainer.innerHTML = element;
-    
-// } 
-
-
 //end of working with blogs
 
 
@@ -207,3 +182,21 @@ function storingMessage(){
     console.log(JSON.parse(localStorage.getItem('contactMessage')))
 }
 
+
+function displayProjectsInPage(){
+    const projectstored = JSON.parse(localStorage.getItem('projects') || []);
+    const projectContainer = document.querySelector(".projects-section-container"); 
+    let elem = "";
+    projectstored.forEach((pro) => {
+        elem += `
+        <div class="project-div3 single-project">
+            <h1>${pro.title}</h1>
+            <p>${pro.description}</p>
+            <button>DEMO</button>
+        </div>
+        `
+    })
+    projectContainer.innerHTML = elem;
+
+}
+displayProjectsInPage()
