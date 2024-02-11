@@ -1,5 +1,6 @@
 const menu = document.getElementById("menu");
 const ul = document.querySelector(".display-menu");
+const blogs = JSON.parse(localStorage.getItem("blogContent"))
 menu.addEventListener("click", (e) => {
     if (menu.innerHTML === '<i class="fa-solid fa-bars"></i>') {
         e.preventDefault();
@@ -20,26 +21,95 @@ menu.addEventListener("click", (e) => {
 
 //working with blogs and display it in the portfolio
 
-const blogs = JSON.parse(localStorage.getItem("blogContent"))
-const blogContainer = document.querySelector(".container-blog")
-let element = "";
-blogs.forEach((rec) => {
-    element += `
-    <div>
-        <h1>${rec.title}</h1>
-        <p>${rec.description}</p>
-        <div id="read-more">
-            <a href="" style="margin-left: 30px;">Read more</a>
-            <a href=""><i class="fa-solid fa-circle-right"></i></a>
-        </div>
-    </div>
+// const blogs = JSON.parse(localStorage.getItem("blogContent"))
+// const blogContainer = document.querySelector(".container-blog")
+// let element = "";
+// blogs.forEach((rec) => {
+//     element += `
+//     <div>
+//         <h1>${rec.title}</h1>
+//         <p>${rec.description}</p>
+//         <div id="read-more">
+//             <a href="" style="margin-left: 30px;">Read more</a>
+//             <a href=""><i class="fa-solid fa-circle-right"></i></a>
+//         </div>
+//     </div>
     
-    `
-})
-blogContainer.innerHTML = element;
+//     `
+// })
+// blogContainer.innerHTML = element;
 
 
 
+    
+if(blogs[0] && blogs[1]){
+    let upDatedBlog = [];
+    let firstBlog = blogs[0];
+    let secondBlog = blogs[1];
+    upDatedBlog.push(firstBlog,secondBlog)
+    console.log(upDatedBlog)
+
+    const blogContainer = document.querySelector(".container-blog.blog1");
+    let element = "";
+    upDatedBlog.forEach((rec) => {
+            element += `
+            <div>
+                <h1>${rec.title}</h1>
+                <p>${rec.description}</p>
+                <div id="read-more">
+                    <a href="" style="margin-left: 30px;">Read more</a>
+                    <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+            </div>
+            
+            `
+    })
+    blogContainer.innerHTML = element;
+} 
+if (blogs[2] && blogs[3]){
+    let upDatedBlog1 = [];
+    let thirdBlog = blogs[2];
+    let forthBlog = blogs[3];
+    upDatedBlog1.push(thirdBlog, forthBlog);
+    console.log("hello",upDatedBlog1)
+    const blogContainer = document.querySelector(".container-blog.blog2");
+    let element = "";
+    upDatedBlog1.forEach((rec) => {
+            element += `
+            <div>
+                <h1>${rec.title}</h1>
+                <p>${rec.description}</p>
+                <div id="read-more">
+                    <a href="" style="margin-left: 30px;">Read more</a>
+                    <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+            </div>
+            
+            `
+    })
+    blogContainer.innerHTML = element;
+
+}
+
+if(blogs.length > 4){
+    const blogContainer = document.querySelector(".container-blog.blog2");
+    let element = "";
+    upDatedBlog1.forEach((rec) => {
+            element += `
+            <div>
+                <h1>${rec.title}</h1>
+                <p>${rec.description}</p>
+                <div id="read-more">
+                    <a href="" style="margin-left: 30px;">Read more</a>
+                    <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+            </div>
+            
+            `
+    })
+    blogContainer.innerHTML = element;
+}
+    
 //end of working with blogs
 
 
@@ -112,3 +182,21 @@ function storingMessage(){
     console.log(JSON.parse(localStorage.getItem('contactMessage')))
 }
 
+
+function displayProjectsInPage(){
+    const projectstored = JSON.parse(localStorage.getItem('projects') || []);
+    const projectContainer = document.querySelector(".projects-section-container"); 
+    let elem = "";
+    projectstored.forEach((pro) => {
+        elem += `
+        <div class="project-div3 single-project">
+            <h1>${pro.title}</h1>
+            <p>${pro.description}</p>
+            <button>DEMO</button>
+        </div>
+        `
+    })
+    projectContainer.innerHTML = elem;
+
+}
+displayProjectsInPage()
