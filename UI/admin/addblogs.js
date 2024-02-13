@@ -97,8 +97,18 @@ function deleteBlog(id){
     })
     document.getElementById('del').addEventListener('click', (e) => {
         e.preventDefault()
+        //create object for deleted blog
+        let del = JSON.parse(localStorage.getItem('deletedBlog') || '[]');
+        // if (!Array.isArray(del)) {
+        //     del = [];
+        // }
         const dataIndex = blog.findIndex(rec => rec.id === id);
+        let obj = blog[dataIndex];
+        //push the deleted blog to array of deleted blogs
+        del.push(obj);
+        localStorage.setItem("deletedBlog",JSON.stringify(del));
         if (dataIndex !== -1) {
+
             blog.splice(dataIndex, 1);
             localStorage.setItem('blogContent', JSON.stringify(blog));
             deleteMessage.style.display = 'none';
@@ -107,8 +117,7 @@ function deleteBlog(id){
             document.getElementById('blogs-section').classList.remove('body-opacity');
             document.getElementById('addblog-container').classList.remove('body-opacity');
             displayBlog();
-        } 
-        else {
+        }else {
             console.error("Blog with the specified ID not found.");
         }
     })
@@ -116,6 +125,13 @@ function deleteBlog(id){
     
 
 }
+
+
+function retrievedeleted(){
+    const deletedBlog = JSON.parse(localStorage.getItem("deletedBlog")) || [];
+    console.log(deletedBlog)
+}
+retrievedeleted()
 
 
 const syncedImages = document.querySelectorAll('.synced-image');
