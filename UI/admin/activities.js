@@ -3,20 +3,34 @@ if (!users || !users.isAuthenticated) {
     window.location.href = "../login-page/login.html";
 }
 
+//initialize the current length and is updated depend on the blogs added
+//at the initial stage is empty and it has zero and as we add new blog is updated to the length of blog
+let currentLength = JSON.parse(localStorage.getItem("previousBlogLength")) || 0; // Initialize currentLength to zero
+console.log('Initial currentLength:', currentLength);
 
-const blogsMove = JSON.parse(localStorage.getItem("blogContent"));
+const blogsMove = JSON.parse(localStorage.getItem("blogContent")) || [];
 
-if (blogsMove) {
-    let previousBlogLength = localStorage.getItem("previousBlogLength") || 0;
-    if (blogsMove.length > previousBlogLength) {
-        const newBlog = blogsMove[blogsMove.length - 1];
-        let blogActHistory = JSON.parse(localStorage.getItem("blogsActivityHistory")) || [];
-        blogActHistory.push(newBlog);
-        localStorage.setItem("blogsActivityHistory", JSON.stringify(blogActHistory));
-        localStorage.setItem("previousBlogLength", blogsMove.length);
-        
-    } 
+if (blogsMove.length > currentLength) {
+    console.log('Length of blogsMove increased');
+     // Update currentLength with the new length of blogsMove
+     //retrieving the current storage
+    let blogActHistory = JSON.parse(localStorage.getItem("blogsActivityHistory")) || [];
+    //retrieve the last blog added
+    const newBlog = blogsMove[blogsMove.length - 1];
+    //push it to the storage of the last added blog
+    blogActHistory.push(newBlog);
+    localStorage.setItem("blogsActivityHistory", JSON.stringify(blogActHistory));
+    //updating blog to the length of the blog
+    currentLength = blogsMove.length;
+    localStorage.setItem("previousBlogLength", JSON.stringify(currentLength));
+    displayAddedBlogHis()
 }
+
+
+
+
+
+//displaying blog to the page
 function displayAddedBlogHis(){
     const storedHistory = JSON.parse(localStorage.getItem("blogsActivityHistory"));
     console.log(storedHistory)
@@ -34,11 +48,13 @@ function displayAddedBlogHis(){
     tb.innerHTML = elementActivity;
     
 }
-displayAddedBlogHis()
+//ensure that when the page is reloaded it displays also relevant function related to it.
+window.addEventListener(('load'),() => {
+    displayAddedBlogHis()
+})
 
-function displayUpdatedBlog(){
 
-}
+
 
 
 
