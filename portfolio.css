@@ -383,6 +383,8 @@ nav ul li:hover
     border-radius: 12px;
     margin-bottom: 50px;
     margin-right: 40px;
+    position: relative;
+    left: 25px;
 }
 
 
