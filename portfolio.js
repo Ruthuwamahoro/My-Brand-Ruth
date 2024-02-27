@@ -192,7 +192,7 @@ function displayProjectsInPage(){
         <div class="project-div3 single-project">
             <h1>${pro.title}</h1>
             <p>${pro.description}</p>
-            <button ><a href="${pro.demolink}">Demo</a></button>
+            <button ><a href="${pro.demoLink}">Demo</a></button>
         </div>
         `
     })
