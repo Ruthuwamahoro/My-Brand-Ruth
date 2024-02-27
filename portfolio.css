@@ -326,6 +326,13 @@ nav ul li:hover
 }
 
 
+.single-project button a {
+    text-decoration: none;
+    color: black;
+    margin-bottom: 20px;
+}
+
+
 
 
 #projects-section
@@ -464,42 +471,7 @@ nav ul li:hover
     justify-content: space-around;
 }
 
-/* .skills-level
-{
-    width: 4rem;
-    height: 4rem;
-    
-    border-radius: 9rem;
-    margin: 1.5rem;
 
-    
-    animation: circularBar 1s ease-out infinite;
-    
-}
-@keyframes circularBar
-{
-    0%{
-        transform: rotate(0deg);
-        border-top: 1px solid green;
-    }
-    50%{
-        transform: rotate(180deg) ;
-        border-top: 1px solid red;
-        border-right: 1px solid green;
-    }
-}
-
-
-
-
-.skills-level span 
-{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    color: black;
-} */
 
 
 .skills-section h1 
@@ -532,6 +504,7 @@ nav ul li:hover
 {
     width: 100%;
     padding: 40px 40px;
+    background-color: white;
 }
 
 .contactUs-container p,.contactUs-container>h1
@@ -550,6 +523,11 @@ nav ul li:hover
     margin-bottom: 30px;
     
 }
+
+.contactUs-container #form {
+    padding: 20px;
+}
+
 input[type="text"], input[type="email"], textarea 
 {
     width: 600px;
@@ -579,6 +557,7 @@ textarea {
     
 
 }
+
 
 .contactUs-container form button 
 {
