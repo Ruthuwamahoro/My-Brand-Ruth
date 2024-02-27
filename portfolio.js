@@ -184,7 +184,8 @@ function storingMessage(){
 
 
 function displayProjectsInPage(){
-    const projectstored = JSON.parse(localStorage.getItem('projects') || []);
+    const projectstored = JSON.parse(localStorage.getItem('projects') || '[]');
+
     const projectContainer = document.querySelector(".projects-section-container"); 
     let elem = "";
     projectstored.forEach((pro) => {
