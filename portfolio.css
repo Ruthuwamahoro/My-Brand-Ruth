@@ -534,6 +534,7 @@ input[type="text"], input[type="email"], textarea
     height: 40px;
     border-radius: 10px;
     margin: auto;
+    padding-left: 30px;
     
 }
 form 
@@ -553,9 +554,13 @@ textarea {
     border-radius: 10px;
     height: 200px;
     margin: auto;
+    padding-top: 20px;
    
     
 
+}
+.errorStyle {
+    color: red;
 }
 
 
