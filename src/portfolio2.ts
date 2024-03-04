@@ -49,16 +49,3 @@ submission.addEventListener("click", (e) => {
     fetchingData()
 
 });
-
-// fetch("http://localhost:8080/contact/contactmessage", {
-//     method: 'POST',
-//     headers: {
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json'
-//     },
-//     body: JSON.stringify({
-//         name: inputName.value,
-//         email: inputEmail.value,
-//         message: inputMessage.value
-//     })
-// }).then((result) => result.json()).then((data) => console.log(data))
