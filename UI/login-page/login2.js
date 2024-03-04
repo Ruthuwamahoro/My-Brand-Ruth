@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             console.log(accessHeader)
             try{
-                const response = await fetch('http://localhost:8080/logininfo/login', accessHeader)
+                const response = await fetch('https://brand-backend-side.onrender.com/logininfo/login', accessHeader)
                 const data = await response.json()
                 if(data.status === 'ok'){
                     localStorage.setItem('token', JSON.stringify({ token : data.token}));

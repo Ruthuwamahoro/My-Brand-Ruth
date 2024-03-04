@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
             headers: headers
         }
         try {
-            const response = await fetch("http://localhost:8080/contact/contactmessage", getToken)
+            const response = await fetch("https://brand-backend-side.onrender.com/contact/contactmessage", getToken)
             const data = await  response.json()
             console.log(data.messages)
             let element = '';

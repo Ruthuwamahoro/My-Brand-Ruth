@@ -15,7 +15,7 @@ submit.addEventListener('click', (e) => {
 
     }
 
-    fetch('http://localhost:8080/logininfo/register', {
+    fetch('https://brand-backend-side.onrender.com/logininfo/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
