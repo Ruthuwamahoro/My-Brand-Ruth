@@ -59,9 +59,10 @@ body
     width: 320px;
     height: 40px;
     border-radius: 10px;
-    border: none;
+    border: 1px dotted green ;
     position: relative;
     left: 80px;
+    padding-left: 30px;
 }
 
 #errorMessage 
@@ -133,14 +134,11 @@ body
     font-size: 17px;
     font-weight: var(--text-font-weight);
     cursor: pointer;
-    /* transition: all 1s ease-in-out; */
 }
 
 #container button:active
 {
     transform: scale(0.9);
-    
-
 }
 
 #container>div>a

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign up page</title>
+    <link rel="stylesheet" href="registration.css" />
+  </head>
+  <body>
+    <main>
+      <div id="container">
+        <img
+          src="../images/unknown.png"
+          width="100px"
+          height="100px"
+          style="border-radius: 50%"
+        />
+        <h1>Sign Up</h1>
+        <form action="" id="myForm">
+          <label for="Username">Email</label> <br />
+          <input type="text" id="email" name="email" />
+          <br />
+          <label for="Username">username</label> <br />
+          <input type="text" id="Username" name="Username" />
+          <br />
+          <label for="password">Password</label> <br />
+          <input type="password" id="password" name="password" /> <br />
+          <label for="password">Confirm Password</label> <br />
+          <input type="password" id="confirm-password" name="confirm-password" /> <br />
+          <p id="errorMessage"></p>
+          <button type="submit" id="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+    <div id="nst"></div>
+    <script src="registration.js"></script>
+  </body>
+</html>

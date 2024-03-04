@@ -1,0 +1,46 @@
+document.addEventListener('DOMContentLoaded', (e) => {
+    e.preventDefault()
+    async function fetchingData(){
+        //retrieve token from local storage
+        const token = JSON.parse(localStorage.getItem('token'))
+        const headers = new Headers()
+        headers.append('Content-Type', 'application/json')
+        headers.append('Accept', 'application/json')
+        headers.append('Authorization', `Bearer ${token.token}`)
+        const getToken = {
+            method: 'GET',
+            headers: headers
+        }
+        try {
+            const response = await fetch("http://localhost:8080/contact/contactmessage", getToken)
+            const data = await  response.json()
+            console.log(data.messages)
+            let element = '';
+            const messageObj = data.messages
+            messageObj.forEach((message)=>{
+                element += `
+           
+                <tr>
+                    <td>${message.fullName}</td>
+                    <td>${message.email}</td>
+                    <td>${message.message}</td>
+                    <td>
+                        <button class="reply-button" onclick="replyEmail()">reply</button>
+                    </td>
+                </tr>
+               
+                `
+            })
+            document.getElementsByTagName('tbody')[0].innerHTML=element;
+
+
+        } catch(err){
+            console.log(err)
+        }
+    }
+    fetchingData()
+})
+function replyEmail(){
+    window.location.href = "https://mail.google.com";
+}
+
