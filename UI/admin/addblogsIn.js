@@ -1,3 +1,5 @@
+document.getElementById('container').style.display = 'none'
+//document.getElementsByClassName('empty-blog').style.display = 'none'
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault()
     async function fetchingData(){
@@ -158,7 +160,8 @@ async function update(id){
             }
             console.log(defineCustoms.body)
             fetch(`https://brand-backend-side.onrender.com/post/updatepost/${id}`, defineCustoms)
-    
+            alert('Blog updated successfully')
+            window.location.href = './addblogs.html'
         })
     } catch(error){
         console.log(error)
