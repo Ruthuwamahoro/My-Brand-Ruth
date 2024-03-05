@@ -80,11 +80,12 @@
         
         <div id="addblog-container">
             <h1>Add new blog</h1>
-            <form action="" id="blog-Form">              
+            <form action="" method="POST" id="blog-Form">              
                 <label for="title">Title</label><br>
                 <input type="text" id="title" name="title" required><br>
                 <label for="description">Description</label>
                 <input type="text" id="description" placeholder="Enter short description"><br>  
+                <input type="file" id="img">
                 <label for="content">Content</label><br>
                 <textarea name="content" id="content" cols="30" rows="10" style="display: none;"></textarea><br>
                 
@@ -100,7 +101,6 @@
         
             
           </div>
-        <script type="module" src="addblogplace.js"></script>
-        <script src="./uuidv4.js" type="module"></script>
+        <script type="module" src="addblogplaceIn.js"></script>
 </body>
 </html>
