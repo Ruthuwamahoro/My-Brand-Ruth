@@ -7,9 +7,21 @@ if (!users || !users.isAuthenticated) {
 //displaying number of blogs posted
 const numberOfBlog = document.getElementById("numberOfBlogs");
 //retrieving the stored blogs
+const token = JSON.parse(localStorage.getItem("token"))
+const getToken = token.token
 
-const blog = JSON.parse(localStorage.getItem('blogContent')) || [];
-numberOfBlog.textContent = blog.length;
+const blog = fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${getToken}`
+    }
+}).then((data) => data.json()).then((res) => {
+    const num = res.data.length
+    numberOfBlog.textContent = num
+})
+
 //adding some styles
 
 
@@ -24,8 +36,17 @@ numberOfBlog.style.fontSize = "30px";
 
 //displaying number of contact Inquires
 
-const inquires = JSON.parse(localStorage.getItem("contactMessage")) || [];
 const numberOfInquires = document.getElementById("inq");
+const inquires = fetch('https://brand-backend-side.onrender.com/contact/contactmessage', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Authorization': `Bearer ${getToken}`
+    }
+}).then((res) => res.json()).then((data) => {
+    numberOfInquires.textContent = data.messages.length
+})
 numberOfInquires.textContent = inquires.length;
 //adding some styles
 
