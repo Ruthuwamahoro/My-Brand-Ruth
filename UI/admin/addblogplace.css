@@ -206,10 +206,12 @@ body {
     height: 70px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: none;
+    border: 1px dotted green;
     background-color: white;
     padding-left: 10px;
     box-sizing: border-box;
+    font-family: 'Jost', sans-serif; 
+    font-size: 17px;
 
 }
 
@@ -219,10 +221,9 @@ body {
     height: 300px;
     margin-bottom: 20px;
     border-radius: 5px;
-    border: none;
+    border: 1px dotted green;
     background-color: white;
     padding-left: 10px;
-    box-sizing: border-box;
 
 }
 /* #editor {
