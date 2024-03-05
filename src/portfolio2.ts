@@ -49,3 +49,97 @@ submission.addEventListener("click", (e) => {
     fetchingData()
 
 });
+
+
+async function displayBlog(){
+    const token = JSON.parse(localStorage.getItem('token') || '{}');
+    const getToken = token.token
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', `Bearer ${getToken}`);
+    const customization = {
+        method: 'GET',
+        headers: headers
+    }
+    try{
+        const response = await fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', customization)
+        const blogs = await response.json();
+        console.log(blogs.data[0])
+        const blog = blogs.data
+        if(blog[0] && blog[1]){
+            const getContainer = document.querySelector('.container-blog.blog1') as HTMLDivElement
+            let makeNewBlogArr = []
+            const firstBlo = blog[0]
+            const secondBlo = blog[1]
+            makeNewBlogArr.push(firstBlo, secondBlo)
+            let elem = ''
+            makeNewBlogArr.forEach((rec: any) => {
+                elem += `
+                <div>
+                    <h1>${rec.title}</h1>
+                    <p>${rec.description}</p>
+                    <div id="read-more">
+                        <a href="" style="margin-left: 30px;">Read more</a>
+                        <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                    </div>
+                </div>
+    
+                `
+            })
+            getContainer.innerHTML = elem
+        }
+
+        if(blog[2] && blog[3]){
+            const getContainer = document.querySelector('.container-blog.blog2') as HTMLDivElement
+
+            let makeNewBlogArr = []
+            const firstBlo = blog[2]
+            const secondBlo = blog[3]
+            makeNewBlogArr.push(firstBlo, secondBlo)
+            let elem = ''
+            makeNewBlogArr.forEach((rec: any) => {
+                elem += `
+                <div>
+                    <h1>${rec.title}</h1>
+                    <p>${rec.description}</p>
+                    <div id="read-more">
+                        <a href="" style="margin-left: 30px;">Read more</a>
+                        <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                    </div>
+                </div>
+    
+                `
+            })
+            getContainer.innerHTML = elem
+        }
+        if(blog[4] && blog[5]){
+            const getContainer = document.querySelector('.container-blog.blog3') as HTMLDivElement
+
+            let makeNewBlogArr = []
+            const firstBlo = blog[4]
+            const secondBlo = blog[5]
+            makeNewBlogArr.push(firstBlo, secondBlo)
+            console.log(makeNewBlogArr)
+            let elem = ''
+            makeNewBlogArr.forEach((rec: any) => {
+                elem += `
+                <div>
+                    <h1>${rec.title}</h1>
+                    <p>${rec.description}</p>
+                    <div id="read-more">
+                        <a href="" style="margin-left: 30px;">Read more</a>
+                        <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                    </div>
+                </div>
+    
+                `
+            })
+            getContainer.innerHTML = elem
+        }
+
+    } catch(error){
+        console.log(error)
+    }
+}
+displayBlog()
