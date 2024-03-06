@@ -1,3 +1,10 @@
+let token = JSON.parse(localStorage.getItem("token"));
+if (!token || !token.isAuthenticated) {
+    window.location.href = "../login-page/login.html";
+}
+
+//allow authorized user to access my dashboard
+
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault()
     async function fetchingData(){

@@ -1,8 +1,12 @@
+let token = JSON.parse(localStorage.getItem("token"));
+if (!token || !token.isAuthenticated) {
+    window.location.href = "../login-page/login.html";
+}
+
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault()
     
     const button = document.getElementById('confirm')
-    //console.log(data)
     button.addEventListener('click', async(e) => {
         
         e.preventDefault()
@@ -101,34 +105,29 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 })
 
-document.addEventListener('DOMContentLoaded', (e) => {
-    e.preventDefault()
-
-})
 async function deleteProject(id){
-    document.querySelector('.delete-btn').addEventListener('click', (e) => {
-        e.preventDefault()
+    const btn = document.querySelector('.fa-solid')
+    console.log(btn)
+    const token = JSON.parse(localStorage.getItem("token"));
+    const getToken = token.token
+    console.log(getToken)
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', `Bearer ${getToken}`);
+    const defineCustoms = {
+        method: 'DELETE',
+        headers: headers,
+    }
+    console.log(defineCustoms)
+    try{
+        const response = await fetch(`https://brand-backend-side.onrender.com/project/deleteproject/${id}`, defineCustoms)
+        const data = await response.json()
+        console.log("----------------------------",data)
+    } catch(error){
+        console.log(error)
+    }
 
-        const token = JSON.parse(localStorage.getItem("token"));
-        const getToken = token.token
-        console.log(getToken)
-        const headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        headers.append('Accept', 'application/json');
-        headers.append('Authorization', `Bearer ${getToken}`);
-        const defineCustoms = {
-            method: 'DELETE',
-            headers: headers,
-        }
-        console.log(defineCustoms)
-        try{
-            const response = fetch(`https://brand-backend-side.onrender.com/project/deleteproject/${id}`, defineCustoms)
-            const data = response.json()
-            console.log(data)
-        } catch(error){
-            console.log(error)
-        }
-    })
 
     
 }
