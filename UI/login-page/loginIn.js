@@ -1,11 +1,11 @@
 let token = JSON.parse(localStorage.getItem("token"));
-const registDis = document.getElementById('registrationLink')
+// const registDis = document.getElementById('registrationLink')
 if (!token || !token.isAuthenticated) {
     window.location.href = "../login-page/login.html";
-    registDis.addEventListener('click', (e) => {
-        e.preventDefault();
-        return false
-    })
+    // registDis.addEventListener('click', (e) => {
+    //     e.preventDefault();
+    //     return false
+    // })
 }
 
 document.addEventListener('DOMContentLoaded', (e) => {
