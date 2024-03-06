@@ -97,56 +97,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-//authentication to this page
-// let users = JSON.parse(localStorage.getItem("StoreUsers"));
-// if (!users || !users.isAuthenticated) {
-//     window.location.href = "../login-page/login.html";
-// }
-
-
-
-// document.getElementById("submit").addEventListener(('click'), (e) => {
-//     e.preventDefault()
-//     addBlogs()
-//     // newAddedBlog()
-    
-// })
-// // Check if there is existing data in local storage
-// let blog = JSON.parse(localStorage.getItem("blogContent")) || [];
-
-// function addBlogs() {
-//     let newTitle = document.getElementById("title").value;
-//     let newContent = quill.root.textContent;
-//     let newDescription = document.getElementById("description").value;
-//     let newBlog = {
-//         id: blog.length + 1,
-//         title: newTitle,
-//         content: newContent,
-//         description: newDescription,
-//         updatedAt: new Date().toLocaleString()
-//     };
-//     blog.push(newBlog);
-    
-//     // Update the local storage with the modified blog array
-//     localStorage.setItem("blogContent", JSON.stringify(blog));
-//     console.log(blog)
-//     window.location.href = "./addblogs.html";
-// }
-
-
-
-
 // const syncedImages = document.querySelectorAll('.synced-image');
 // const inputImage = document.getElementById('input-file');
 

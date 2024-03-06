@@ -143,3 +143,35 @@ async function displayBlog(){
     }
 }
 displayBlog()
+
+
+async function displayProjectsInPage(){
+    const token = JSON.parse(localStorage.getItem('token') || '{}');
+    const getToken = token.token
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('Accept', 'application/json');
+    headers.append('Authorization', `Bearer ${getToken}`);
+    const customization = {
+        method: 'GET',
+        headers: headers
+    }
+    const project = await fetch('https://brand-backend-side.onrender.com/project/getallprojects', customization)
+    const n = await project.json()
+    const projectstored = n.projects
+    console.log("-------------",projectstored)
+    let projectContainer = document.querySelector(".projects-section-container") as HTMLDivElement; 
+    let elem = "";
+    projectstored.forEach((pro: any) => {
+        elem += `
+        <div class="project-div3 single-project">
+            <h1>${pro.title}</h1>
+            <p>${pro.description}</p>
+            <button ><a href="${pro.demoLink}">Demo</a></button>
+        </div>
+        `
+    })
+    projectContainer.innerHTML = elem;
+
+}
+displayProjectsInPage()
