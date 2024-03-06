@@ -1,3 +1,8 @@
+let token = JSON.parse(localStorage.getItem("token"));
+if (!token || !token.isAuthenticated) {
+    window.location.href = "../login-page/login.html";
+}
+
 //authentication to this page
 let users = JSON.parse(localStorage.getItem("StoreUsers"));
 if (!users || !users.isAuthenticated) {

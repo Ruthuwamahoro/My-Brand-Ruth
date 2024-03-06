@@ -1,13 +1,12 @@
 //authentication to this page
-let users = JSON.parse(localStorage.getItem("StoreUsers"));
-if (!users || !users.isAuthenticated) {
+let token = JSON.parse(localStorage.getItem("token"));
+if (!token || !token.isAuthenticated) {
     window.location.href = "../login-page/login.html";
 }
 
 //displaying number of blogs posted
 const numberOfBlog = document.getElementById("numberOfBlogs");
 //retrieving the stored blogs
-const token = JSON.parse(localStorage.getItem("token"))
 const getToken = token.token
 
 const blog = fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', {

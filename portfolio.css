@@ -249,6 +249,7 @@ nav ul li:hover
 {
     display: flex;
     justify-content: space-between;
+    height: fit-content;
 }
 
 #projects-section 
@@ -276,7 +277,10 @@ nav ul li:hover
 {
     background-image: url(./UI/images/pankaj-patel-ruiU36AR5zo-unsplash.jpg);
 }
-
+.projects-section-container div:nth-of-type(5)
+{
+    background-image: url(./UI/images/calculator3.webp);
+}
 
 .single-project 
 {
@@ -286,7 +290,8 @@ nav ul li:hover
     border-radius: 20px;
     margin-right: 20px;
     margin-left: 20px;
-    height: 400px;
+    height: 440px;
+    position: relative;
 }
 
 
@@ -316,13 +321,17 @@ nav ul li:hover
     height: 40px;
     background-color: #D5DBE3;
     border: none;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     font-weight: 800;
     cursor: pointer;
     font-size: 25px;
     transition: all .3s ease-in-out;
-    margin-left: 30%;
-    
+    /* margin-left: 30%; */
+    margin: 0px auto;
+    display: block;
+    margin-bottom: 0px;
+
+
 }
 
 

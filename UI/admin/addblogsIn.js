@@ -1,3 +1,14 @@
+//check if there is token in the local storage and if it is empty and is invalid ,it redirect to the login page
+//let's start step by step
+let token = JSON.parse(localStorage.getItem("token"));
+if (!token || !token.isAuthenticated) {
+    window.location.href = "../login-page/login.html";
+}
+
+
+console.log(token)
+
+
 document.getElementById('container').style.display = 'none'
 //document.getElementsByClassName('empty-blog').style.display = 'none'
 document.addEventListener('DOMContentLoaded', (e) => {
