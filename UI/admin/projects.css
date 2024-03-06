@@ -155,7 +155,7 @@ body {
 
 #separator {
     width: 3px;
-    height: 870px;
+    height: 100%;
     background-color: rgb(148, 145, 145);
     margin-left: 50px;
     margin-right: 10px;
@@ -193,9 +193,20 @@ body {
     border-radius: 5px;
     border: none;
     background-color: white;
-    
-    padding-left: 10px;
+    padding-left: 30px;
+    font-family: 'Jost', sans-serif;
+    border: 1px dotted green;
+    font-size: 17px;
 
+}
+
+#add-new-project form textarea {
+    padding-left: 30px;
+    padding-top: 20px;
+    font-family: 'Jost', sans-serif;
+    border: 1px dotted green;
+    font-size: 17px;
+    
 }
 
 #add-new-project form label {
