@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                     <td>${message.email}</td>
                     <td>${message.message}</td>
                     <td>
-                        <button class="reply-button" onclick="replyEmail()">reply</button>
+                        <a href="mailto:${message.email}" class="reply-button" style="color: black; text-decoration: none;">Reply</a>
                     </td>
                 </tr>
                
@@ -47,7 +47,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
     }
     fetchingData()
 })
-function replyEmail(){
-    window.location.href = "https://mail.google.com";
-}
+// function replyEmail(){
+//     window.location.href = "https://mail.google.com";
+
+// }
 
