@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', (e) => {
             try{
                 const response = await fetch('https://brand-backend-side.onrender.com/logininfo/login', accessHeader)
                 const data = await response.json()
-                if(data){
+                console.log(data)
+                if(data.status === 'ok'){
                     localStorage.setItem('token', JSON.stringify({ token : data.token, isAuthenticated: true }));
                     window.location.href='../admin/addblogs.html'
                 } else {
