@@ -67,6 +67,7 @@ async function displayBlog(){
         const blogs = await response.json();
         console.log(blogs.data[0])
         const blog = blogs.data
+        console.log(blog)
         if(blog[0] && blog[1]){
             const getContainer = document.querySelector('.container-blog.blog1') as HTMLDivElement
             let makeNewBlogArr = []
