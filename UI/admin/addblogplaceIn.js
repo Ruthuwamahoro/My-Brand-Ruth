@@ -54,12 +54,19 @@ document.addEventListener('DOMContentLoaded', (e) => {
         let newTitle = document.getElementById("title");
         let newContent = document.getElementById("content");
         let newDescription = document.getElementById("description");
-        const img = document.getElementById('img')
+        const newshortIntro = document.getElementById('short-intro');
+        const longIntro = document.getElementById('main-intro');
+        const img = document.getElementById('img').value.split("\\");
+        console.log("--------------------------------------------",img[2])
+        const realImg = `https://brand-backend-side.onrender.com/uploads/${img[2]}`
+        console.log(realImg)
         const data = {
             title: newTitle.value,
             content: newContent.value,
             description: newDescription.value,
-            // image: img.value
+            welcomeIntro: newshortIntro.value,
+            introduction: longIntro.value,
+            image: img.value
         }
         const token = JSON.parse(localStorage.getItem('token'))
         const getToken = token.token
@@ -93,47 +100,6 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 
 })
-
-
-
-
-
-
-
-
-
-// const syncedImages = document.querySelectorAll('.synced-image');
-// const inputImage = document.getElementById('input-file');
-
-// function updateAllImages(sourceSrc) {
-//     syncedImages.forEach(image => {
-//         image.src = sourceSrc;
-//     });
-//     localStorage.setItem("storedImage", sourceSrc);
-// }
-
-// let img = localStorage.getItem("storedImage");
-// if (img) {
-//     updateAllImages(img);
-// }
-
-// inputImage.onchange = function () {
-//     const sourceSrc = URL.createObjectURL(inputImage.files[0]);
-//     updateAllImages(sourceSrc);
-// }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
