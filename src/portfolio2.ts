@@ -129,8 +129,8 @@ async function displayBlog(){
                     <h1>${rec.title}</h1>
                     <p>${rec.description}</p>
                     <div id="read-more">
-                        <a href="" style="margin-left: 30px;">Read more</a>
-                        <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                        <a href="../UI/blogs/blog1.html" style="margin-left: 30px;">Read more</a>
+                        <a href="../UI/blogs/blog1.html"><i class="fa-solid fa-circle-right"></i></a>
                     </div>
                 </div>
     

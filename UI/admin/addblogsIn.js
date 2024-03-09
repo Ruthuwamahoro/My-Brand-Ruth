@@ -14,19 +14,17 @@ document.getElementById('container').style.display = 'none'
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault()
     async function fetchingData(){
-        const token = JSON.parse(localStorage.getItem("token"));
-        const getToken = token.token
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Accept', 'application/json');
-        headers.append('Authorization', `Bearer ${getToken}`);
         const defineCustoms = {
             method: 'GET',
             headers: headers,
         }
         const result = await fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', defineCustoms)
         const response = await result.json()
-        const blog = response.data
+        const blog = response
+        console.log(blog)
         document.getElementById('container').style.display = 'none'
         const emptyBlog = document.querySelector('.empty-blog');
         const mainDiv = document.getElementById('blogs-container-actions');
@@ -147,19 +145,29 @@ async function update(id){
         document.getElementById('ucontent').value = data.data.content;
         document.getElementById('udescription').value = data.data.description;
         document.querySelector('.id').value = data.data._id;
+        document.getElementById('ushort-intro').value = data.data.welcomeIntro;
+        document.getElementById('umain-intro').value = data.data.introduction;
+        document.getElementById('uimg').value = data.data.image;
         document.getElementById('submit2').addEventListener('click', (e) => {
             e.preventDefault()
             let newId = document.querySelector('.id').value;
             let newTitle = document.getElementById('utitle').value;
             let newContent = document.getElementById('ucontent').value;
-            let newDescription = document.getElementById('udescription').value; 
+            let newDescription = document.getElementById('udescription').value;
+            let newshortIntro = document.getElementById('ushort-intro').value;
+            let longIntro = document.getElementById('umain-intro').value;
+            let img = document.getElementById('uimg').value;
     
             const updateBlog = {
                 id: newId,
                 title: newTitle,
                 content: newContent,
-                description: newDescription
+                description: newDescription,
+                welcomeIntro: newshortIntro,
+                introduction: longIntro,
+                image: img
             }
+            console.log(updateBlog)
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
             headers.append('Accept', 'application/json');
