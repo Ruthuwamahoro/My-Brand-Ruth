@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
         }
         const result = await fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', defineCustoms)
         const response = await result.json()
-        const blog = response
+        const blog = response.data
         console.log(blog)
         document.getElementById('container').style.display = 'none'
         const emptyBlog = document.querySelector('.empty-blog');
