@@ -126,16 +126,16 @@ function displayBlog() {
                 let elem = '';
                 makeNewBlogArr.forEach((rec) => {
                     elem += `
-                    <div>
-                    <h1>${rec.title}</h1>
-                    <p>${rec.description}</p>
-                    <div id="read-more">
-                    <a href="#" onclick="goToMainBlog('${rec._id}')" style="margin-left: 30px;">Read more</a>
-                    <a href="#" onclick="goToMainBlog('${rec._id}')"><i class="fa-solid fa-circle-right"></i></a>
-                    </div>
-                    </div>
-                    
-                    `;
+                <div>
+                <h1>${rec.title}</h1>
+                <p>${rec.description}</p>
+                <div id="read-more">
+                <a href="#" onclick="goToMainBlog('${rec._id}')" style="margin-left: 30px;">Read more</a>
+                <a href="#" onclick="goToMainBlog('${rec._id}')"><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+                </div>
+                
+                `;
                 });
                 getContainer.innerHTML = elem;
             }

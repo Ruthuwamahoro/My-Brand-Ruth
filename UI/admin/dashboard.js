@@ -18,7 +18,26 @@ const blog = fetch('https://brand-backend-side.onrender.com/post/retrieveallpost
     }
 }).then((data) => data.json()).then((res) => {
     const num = res.data.length
+    console.log(res.data)
     numberOfBlog.textContent = num
+    const displayBlogOverview = document.getElementById("blog-container-overview");
+    let elem = ``
+    //const getTime = new Date(res.data.created_at)
+    res.data.forEach((record) => {
+        elem += `
+            <div>
+                <h3>${record.title}</h3>
+                <p><span>Published Date:</span> <span>Jan 15,2023</span></p>
+                <p><span>Coments:</span> <span><a href="" style="color: black;"><i class="fa-solid fa-comment-dots"></i></a></span></p>
+                <p><span>Likes:</span> <span><a href="" style="color: black;">
+                    <i class="fa-solid fa-thumbs-up"></i>
+                </a></span></p>
+            </div>
+        `
+    })
+    displayBlogOverview.innerHTML = elem
+
+
 })
 
 //adding some styles
