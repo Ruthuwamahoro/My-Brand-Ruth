@@ -61,12 +61,9 @@ submission.addEventListener("click", (e) => {
 });
 function displayBlog() {
     return __awaiter(this, void 0, void 0, function* () {
-        const token = JSON.parse(localStorage.getItem('token') || '{}');
-        const getToken = token.token;
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Accept', 'application/json');
-        headers.append('Authorization', `Bearer ${getToken}`);
         const customization = {
             method: 'GET',
             headers: headers
@@ -87,14 +84,14 @@ function displayBlog() {
                 makeNewBlogArr.forEach((rec) => {
                     elem += `
                 <div>
-                    <h1>${rec.title}</h1>
-                    <p>${rec.description}</p>
-                    <div id="read-more">
-                        <a href="../UI/blogs/blog1.html" style="margin-left: 30px;">Read more</a>
-                        <a href="../UI/blogs/blog1.html"><i class="fa-solid fa-circle-right"></i></a>
-                    </div>
+                <h1>${rec.title}</h1>
+                <p>${rec.description}</p>
+                <div id="read-more">
+                <a href="#" onclick="goToMainBlog('${rec._id}')" style="margin-left: 30px;">Read more</a>
+                <a href="#" onclick="goToMainBlog('${rec._id}')"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
-    
+                </div>
+                
                 `;
                 });
                 getContainer.innerHTML = elem;
@@ -112,12 +109,12 @@ function displayBlog() {
                     <h1>${rec.title}</h1>
                     <p>${rec.description}</p>
                     <div id="read-more">
-                        <a href="" style="margin-left: 30px;">Read more</a>
-                        <a href=""><i class="fa-solid fa-circle-right"></i></a>
+                    <a href="#" onclick="goToMainBlog('${rec._id}')" style="margin-left: 30px;">Read more</a>
+                    <a href="#" onclick="goToMainBlog('${rec._id}')"><i class="fa-solid fa-circle-right"></i></a>
                     </div>
-                </div>
-    
-                `;
+                    </div>
+                    
+                    `;
                 });
                 getContainer.innerHTML = elem;
             }
@@ -131,16 +128,16 @@ function displayBlog() {
                 let elem = '';
                 makeNewBlogArr.forEach((rec) => {
                     elem += `
-                <div>
+                    <div>
                     <h1>${rec.title}</h1>
                     <p>${rec.description}</p>
                     <div id="read-more">
-                        <a href="../UI/blogs/blog1.html" style="margin-left: 30px;">Read more</a>
-                        <a href="../UI/blogs/blog1.html"><i class="fa-solid fa-circle-right"></i></a>
+                    <a href="#" onclick="goToMainBlog('${rec._id}')" style="margin-left: 30px;">Read more</a>
+                    <a href="#" onclick="goToMainBlog('${rec._id}')"><i class="fa-solid fa-circle-right"></i></a>
                     </div>
-                </div>
-    
-                `;
+                    </div>
+                    
+                    `;
                 });
                 getContainer.innerHTML = elem;
             }
@@ -151,14 +148,45 @@ function displayBlog() {
     });
 }
 displayBlog();
+function goToMainBlog(id) {
+    return __awaiter(this, void 0, void 0, function* () {
+        // const headers = new Headers();
+        // headers.append('Content-Type', 'application/json');
+        // headers.append('Accept', 'application/json');
+        // const customization = {
+        //     method: 'GET',
+        //     headers: headers
+        // }
+        // try{
+        //     const response = await fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', customization)
+        //     const blogs = await response.json();
+        //     console.log(blogs.data[0])
+        //     const blog = blogs.data
+        //     console.log(blog)
+        //     if(blog){
+        //         const blogTitle = document.getElementById('blogTit')!
+        //         const blogWelcomeMessg = document.querySelector('.additional-info')!
+        //         const time = document.getElementById('dateCreated')!
+        //         const getIntroduction = document.getElementById("introd")!
+        //         const date = blog.created_at.split('-')[2].split('T')[0]
+        //         const month = blog.created_at.split('-')[1]
+        //         const  year = blog.created_at.split('-')[0]
+        //         const currentTime = ` ${month} /${date}/${year}`
+        //         blog.forEach((blog:any)=>{
+        //         })
+        //     }
+        // } catch(err){
+        //     console.log(err)
+        // }
+        //window.location.href=`https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
+        window.location.href = `http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
+    });
+}
 function displayProjectsInPage() {
     return __awaiter(this, void 0, void 0, function* () {
-        const token = JSON.parse(localStorage.getItem('token') || '{}');
-        const getToken = token.token;
         const headers = new Headers();
         headers.append('Content-Type', 'application/json');
         headers.append('Accept', 'application/json');
-        headers.append('Authorization', `Bearer ${getToken}`);
         const customization = {
             method: 'GET',
             headers: headers
@@ -174,7 +202,7 @@ function displayProjectsInPage() {
         <div class="project-div3 single-project">
             <h1>${pro.title}</h1>
             <p>${pro.description}</p>
-            <button ><a href="${pro.demoLink}">Demo</a></button>
+            <button ><a href="${pro.demo}">Demo</a></button>
         </div>
         `;
         });
