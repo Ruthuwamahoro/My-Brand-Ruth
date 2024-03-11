@@ -19,8 +19,6 @@ submission.addEventListener("click", (e) => {
             const response = await fetch('https://brand-backend-side.onrender.com/contact/contactmessage', defineHeaders)
             const data = await response.json();
             const erro = data.error
-            //const n = erro.split(',').map((item:string) => item.trim());
-            //console.log(n)
             console.log(erro)
             if(erro){
                 errorMessage.style.color = 'red'
@@ -143,8 +141,9 @@ async function displayBlog(){
 displayBlog()
 
 
-async function goToMainBlog(id : string){
+async function goToMainBlog(id: string){
     window.location.href=`https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
+    // window.location.href=`http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
 }
 
 

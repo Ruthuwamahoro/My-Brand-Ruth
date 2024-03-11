@@ -62,6 +62,17 @@ ul li:hover {
 {
     display: none;
 }
+#register {
+    text-decoration: none;
+    color: white;
+    background-color: #42A978;
+    border-radius: 10px;
+    padding: 10px 20px
+}
+#login {
+    text-decoration: none;
+    color: black;font-size: 30px;
+}
 /* End of navigation style */
 
 /* ------------------------------------------------------------------------------------------------------ */
@@ -179,16 +190,6 @@ ul li:hover {
     margin-left: 100px;
     padding:20px 0px;
 }
-#comment-input 
-{ 
-    position: relative; 
-    top: 10px;
-    width: 300px;
-    height: 50px;
-    background-color: #EBF0F8;
-    border: none;
-
-}
 .doc {
     position: relative;
     bottom: 10px;
@@ -198,14 +199,45 @@ ul li:hover {
     margin-top: 30px; 
     margin-left: 10px
 }
-::placeholder
-{
-    font-size: 25px;
-    
-}
-::placeholder::after{
+::placeholder{
+    font-size: 20px;
     content: var(--input-text-underline);
 
+}
+#comment-input
+{
+    padding-left: 25px;
+    font-size: 20px;
+    background: white;
+    border-radius: 10px;
+    width: 300px;
+    height: 50px;
+    border: none;
+}
+input::placeholder::after{
+    content:'';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: var(--input-text-underline);
+
+}
+#submit-comment
+{
+    border:none;
+    width: 80px;
+    font-size: 20px;
+    padding-top: 5px; 
+    padding-bottom: 5px; 
+    text-decoration: none; 
+    color: black; 
+    background-color: rgb(132, 217, 217);
+    padding-left:10px; 
+    padding-right: 10px; 
+    border-radius: 5px; 
+    font-weight: 900;
+    margin-left: 20px;
+    cursor: pointer;
 }
 /* Start of Recent-post section */
 
@@ -608,7 +640,7 @@ footer #copyright {
         font-size: 14px;
         
     }
-
+    
     #comment-section div 
     {
         margin-left: 0px;
@@ -624,12 +656,12 @@ footer #copyright {
         padding-left: 20px;
         padding-right: 20px;
     }
-
+    
     .recent-posts h1
     {
         text-align: center;
     }
-
+    
     .container-blog>div 
     {
         width: 80%;

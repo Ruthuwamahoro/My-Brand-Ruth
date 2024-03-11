@@ -20,12 +20,14 @@
           <li><a href="#recent-posts" style="text-decoration: none; color: black;">Recent Posts</a></li>
           <li><a href="#end" style="text-decoration: none; color: black;">Contact us</a></li>
 
-          <li>
+          <!-- <li>
             <span
               ><a href=""><i class="fa-solid fa-magnifying-glass"></i></a
             ></span>
             <span>Search</span>
-          </li>
+          </li> -->
+          <li><a href="../registration/registration.html" id="register">Register</a></li>
+          <li><a href="../login-page/login.html" id="login">Login</a></li>
           
         </ul>
         <a href="" id="menu"><i class="fa-solid fa-bars"></i></a>
@@ -242,7 +244,10 @@
             />
             <div style="margin-left: 20px">
               <input placeholder="Add Comment" id="comment-input"/>
-              <button>Post</button>
+
+
+                <button  type="submit" id="submit-comment" onclick="postComment()">Post</button>
+
               <p></p>
             </div>
           </div>
