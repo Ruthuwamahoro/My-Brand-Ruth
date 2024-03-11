@@ -1,3 +1,5 @@
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //check if there is token in the local storage and if it is empty and is invalid ,it redirect to the login page
 //let's start step by step
 let token = JSON.parse(localStorage.getItem("token"));
@@ -6,11 +8,12 @@ if (!token || !token.isAuthenticated) {
 }
 
 
-console.log(token)
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+//displaying blog
 
 
 document.getElementById('container').style.display = 'none'
-//document.getElementsByClassName('empty-blog').style.display = 'none'
 document.addEventListener('DOMContentLoaded', (e) => {
     e.preventDefault()
     async function fetchingData(){
@@ -59,6 +62,9 @@ document.addEventListener('DOMContentLoaded', (e) => {
 
 })
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// delete blog
+
 
 async function deleteBlog(id){
 
@@ -93,17 +99,15 @@ async function deleteBlog(id){
             method: 'DELETE',
             headers: headers,
         }
-        //console.log(defineCustoms)
         try{
             const response = fetch(`https://brand-backend-side.onrender.com/post/deletepost/${id}`, defineCustoms)
-
             deleteMessage.style.display = 'none';
             document.getElementById('navigation-menu-section').classList.remove('body-opacity');
             document.getElementById('navigation-link-container').classList.remove('body-opacity');
             document.getElementById('blogs-section').classList.remove('body-opacity');
             document.getElementById('addblog-container').classList.remove('body-opacity');
             const data = response.json()
-            //console.log(data)
+            console.log(data)
         } catch(error){
             console.log(error)
         }
@@ -113,17 +117,9 @@ async function deleteBlog(id){
 }
 
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
-
-
-
-
-
+//updating blog
 async function update(id){
     try{
         document.getElementById('blogs-section').style.display = 'none';
@@ -140,14 +136,12 @@ async function update(id){
             }
         })
         const data = await result.json()
-    
         document.getElementById('utitle').value = data.data.title;
         document.getElementById('ucontent').value = data.data.content;
         document.getElementById('udescription').value = data.data.description;
         document.querySelector('.id').value = data.data._id;
         document.getElementById('ushort-intro').value = data.data.welcomeIntro;
         document.getElementById('umain-intro').value = data.data.introduction;
-        document.getElementById('uimg').value = data.data.image;
         document.getElementById('submit2').addEventListener('click', (e) => {
             e.preventDefault()
             let newId = document.querySelector('.id').value;
@@ -156,8 +150,7 @@ async function update(id){
             let newDescription = document.getElementById('udescription').value;
             let newshortIntro = document.getElementById('ushort-intro').value;
             let longIntro = document.getElementById('umain-intro').value;
-            let img = document.getElementById('uimg').value;
-    
+            
             const updateBlog = {
                 id: newId,
                 title: newTitle,
@@ -165,9 +158,7 @@ async function update(id){
                 description: newDescription,
                 welcomeIntro: newshortIntro,
                 introduction: longIntro,
-                image: img
             }
-            console.log(updateBlog)
             const headers = new Headers();
             headers.append('Content-Type', 'application/json');
             headers.append('Accept', 'application/json');
@@ -181,6 +172,8 @@ async function update(id){
             fetch(`https://brand-backend-side.onrender.com/post/updatepost/${id}`, defineCustoms)
             alert('Blog updated successfully')
             window.location.href = './addblogs.html'
+
+
         })
     } catch(error){
         console.log(error)
