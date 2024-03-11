@@ -34,8 +34,17 @@ async function fetchSingleBlog(){
     getIntroduction.innerHTML = blog.data.introduction
     const displayContent = document.getElementById('main-content-of-blog')
     displayContent.innerHTML = blog.data.content
+    // get container of the image from html
+
     const displayImage = document.getElementById('api-introduction')
-    console.log(blog.data.image)
+    const image = document.createElement('img')
+    image.src = blog.data.image
+    image.alt = ""
+    image.style.width = "500px"
+    image.style.height = "666.66px"
+    image.style.margin = "auto"
+    displayImage.append(image)
+    console.log("--------------",displayImage.innerHTML)
     
 
 }
