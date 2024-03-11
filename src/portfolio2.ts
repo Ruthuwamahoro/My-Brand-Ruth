@@ -144,39 +144,6 @@ displayBlog()
 
 
 async function goToMainBlog(id : string){
-    // const headers = new Headers();
-    // headers.append('Content-Type', 'application/json');
-    // headers.append('Accept', 'application/json');
-    // const customization = {
-    //     method: 'GET',
-    //     headers: headers
-    // }
-    // try{
-    //     const response = await fetch('https://brand-backend-side.onrender.com/post/retrieveallpost', customization)
-    //     const blogs = await response.json();
-    //     console.log(blogs.data[0])
-    //     const blog = blogs.data
-    //     console.log(blog)
-    //     if(blog){
-    //         const blogTitle = document.getElementById('blogTit')!
-    //         const blogWelcomeMessg = document.querySelector('.additional-info')!
-    //         const time = document.getElementById('dateCreated')!
-    //         const getIntroduction = document.getElementById("introd")!
-    //         const date = blog.created_at.split('-')[2].split('T')[0]
-    //         const month = blog.created_at.split('-')[1]
-    //         const  year = blog.created_at.split('-')[0]
-    //         const currentTime = ` ${month} /${date}/${year}`
-    //         blog.forEach((blog:any)=>{
-                
-
-
-    //         })
-            
-    //     }
-    // } catch(err){
-    //     console.log(err)
-    // }
-    //window.location.href=`https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
     window.location.href=`https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
 }
 

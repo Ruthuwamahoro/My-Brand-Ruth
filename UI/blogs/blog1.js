@@ -44,7 +44,7 @@ async function fetchSingleBlog(){
     image.style.height = "666.66px"
     image.style.margin = "auto"
     displayImage.append(image)
-    console.log("--------------",displayImage.innerHTML)
+    console.log("--------------",blog.data.image)
     
 
 }
