@@ -18,19 +18,30 @@ const blog = fetch('https://brand-backend-side.onrender.com/post/retrieveallpost
     }
 }).then((data) => data.json()).then((res) => {
     const num = res.data.length
-    console.log(res.data)
     numberOfBlog.textContent = num
     const displayBlogOverview = document.getElementById("blog-container-overview");
     let elem = ``
-    //const getTime = new Date(res.data.created_at)
+    let getTotalLikesInOneComment = 0
+
+
+    
     res.data.forEach((record) => {
+        record.comments.forEach((comment) => {
+            getTotalLikesInOneComment += comment.likes.length
+        })
+        const getDate = record.created_at
+        const date = getDate.split('-')[2].split('T')[0]
+        const month = getDate.split('-')[1]
+        const  year = getDate.split('-')[0]
+        const currentTime = ` ${month} /${date}/${year}`
+        
         elem += `
             <div>
                 <h3>${record.title}</h3>
-                <p><span>Published Date:</span> <span>Jan 15,2023</span></p>
-                <p><span>Coments:</span> <span><a href="" style="color: black;"><i class="fa-solid fa-comment-dots"></i></a></span></p>
-                <p><span>Likes:</span> <span><a href="" style="color: black;">
-                    <i class="fa-solid fa-thumbs-up"></i>
+                <p><span>Published Date:</span> <span>${currentTime}</span></p>
+                <p><span>Coments:</span> <span><a href="" style="color: black">${record.comments.length}</a></span></p>
+                <p><span>Likes:</span> <span><a href="" style="color: black;font-weight:900px">
+                ${getTotalLikesInOneComment}
                 </a></span></p>
             </div>
         `

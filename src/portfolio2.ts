@@ -143,7 +143,7 @@ displayBlog()
 
 async function goToMainBlog(id: string){
     window.location.href=`https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
-    // window.location.href=`http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
+    //window.location.href=`http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
 }
 
 
