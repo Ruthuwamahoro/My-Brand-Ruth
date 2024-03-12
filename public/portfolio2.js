@@ -149,7 +149,7 @@ displayBlog();
 function goToMainBlog(id) {
     return __awaiter(this, void 0, void 0, function* () {
         window.location.href = `https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
-        // window.location.href=`http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
+        //window.location.href=`http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
     });
 }
 function displayProjectsInPage() {
