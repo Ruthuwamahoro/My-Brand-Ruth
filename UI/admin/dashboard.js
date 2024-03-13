@@ -25,33 +25,77 @@ const blog = fetch('https://brand-backend-side.onrender.com/post/retrieveallpost
 
 
     
-    res.data.forEach((record) => {
+    res.data.forEach((record, index) => {
+        let usernames = [];
+        let messages = [];
+        let noticeMessg = []
+        const thewholeInfo = []
         record.comments.forEach((comment) => {
+            //getting likes
             getTotalLikesInOneComment += comment.likes.length
+            //getting blogs
+            const username = comment.username
+            const message = comment.commentMessage
+            usernames.push(username)
+            messages.push(message)
         })
+
+        if(usernames.length === 0){
+            thewholeInfo.push('No Comments')
+        } else if(thewholeInfo.length < 2){
+            for(let x=0; x<usernames.length && x<messages.length; x++){
+                thewholeInfo.push(`<br> ${usernames[x]} - ${messages[x]}`)
+            }
+           
+        }
+        
         const getDate = record.created_at
         const date = getDate.split('-')[2].split('T')[0]
         const month = getDate.split('-')[1]
         const  year = getDate.split('-')[0]
-        const currentTime = ` ${month} /${date}/${year}`
+        const currentTime = ` ${date} /${month}/${year}`
         
         elem += `
             <div>
                 <h3>${record.title}</h3>
                 <p><span>Published Date:</span> <span>${currentTime}</span></p>
                 <p><span>Coments:</span> <span><a href="" style="color: black">${record.comments.length}</a></span></p>
+                <a href="" id="seeingComment" style="color: blue;font-weight:900px;text-decoration:none">read more...</a>
+                <p id="seecomments" style="display:none; font-weight:bolder">${thewholeInfo}</p></br>
+                
                 <p><span>Likes:</span> <span><a href="" style="color: black;font-weight:900px">
                 ${getTotalLikesInOneComment}
                 </a></span></p>
+                <div class="comment-section"></div>
             </div>
         `
+        console.log('-----------', record.comments)
     })
     displayBlogOverview.innerHTML = elem
+    // bellow is the data to diaplay
+    const getComments = document.querySelectorAll("#seecomments")
+    //bellow is the button to click
+    const clickToDisplay = document.querySelectorAll("#seeingComment")
+    console.log(clickToDisplay)
+    console.log(getComments)
 
+    for(let x=0; x<clickToDisplay.length; x++){
+        clickToDisplay[x].addEventListener('click', (e)=>{
+            e.preventDefault()
+            if(getComments[x].style.display == "none"){
+                getComments[x].style.display = "block"
+            }
+            else{
+                getComments[x].style.display = "none"
+            }
+        })
+    }
 
 })
 
-//adding some styles
+
+
+
 
 
 numberOfBlog.style.paddingRight = "10px";
