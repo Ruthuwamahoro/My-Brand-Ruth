@@ -39,14 +39,42 @@ async function fetchSingleBlog(){
     const container = document.getElementById('mainCommentContainer')
     const commentNumber = document.getElementById('comment-count')
     commentNumber.textContent = blog.data["comments"].length + " comments"
+    //displaying time of comment posted
+    function displayTime(timeStamp){
+        const getCurrentTime = new Date()
+        const getDifference = getCurrentTime-timeStamp
+        const getCurrentSeconds = Math.floor(getDifference/1000)
+        const getMinutes = Math.floor(getCurrentSeconds/60)
+        const getHours = Math.floor(getMinutes/60)
+        const getDays = Math.floor(getHours/24)
+        if(getCurrentSeconds < 60){
+            return "Just now"
+        } else if (getMinutes === 1){
+            return `${getMinutes} minute ago`
+    
+        } else if(getMinutes < 60){
+            return `${getMinutes} minutes ago`
+        } else if (getHours === 1){
+            return `${getHours} hour ago`
+        } else if(getHours < 24){
+            return `${getHours} hours ago`
+        } else if(getDays === 1){
+            return `${getDays} day ago`
+        } else {
+            return `${getDays} days ago`
+        }
+    
+    }
     let elem = ``
     blog.data["comments"].forEach((comment)=>{
+        const dispTime = new Date(comment.created_at)
+        
         elem += `
         <div style="display: flex; margin-top: 40px">
             <img src="../images/unknown.png" alt=image style="width: 50px; height: 50px; margin-top: 10px; border: 2px solid black ; border-radius: 50%"/>
             <div style="margin-left: 20px">
                 <span>${comment.username}</span>
-                <span>2 days</span>
+                <span style="margin-left: 35px; font-size: 21px; color: gray">${displayTime(dispTime)}</span>
                 <p style="margin-top: 10px; margin-bottom: 20px">${comment.commentMessage}</p>
                 <div class="doc">
                     <span id="like-cont"><i class="fa-regular fa-heart" style="color: black;cursor:pointer" id="like"></i></span>
