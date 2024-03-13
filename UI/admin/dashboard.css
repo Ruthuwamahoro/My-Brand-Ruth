@@ -154,7 +154,7 @@ body {
 
 #separator {
     width: 3px;
-    height: 870px;
+    height: 100%;
     background-color: rgb(148, 145, 145);
     margin-left: 50px;
     margin-right: 10px;
@@ -217,3 +217,4 @@ body {
 
 /* End of dashboard style */
 /* ----------------------------------------------------------------------------------------------- */
+
