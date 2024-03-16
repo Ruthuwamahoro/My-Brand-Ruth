@@ -30,7 +30,7 @@ async function fetchSingleBlog(){
     const image = document.createElement('img')
     image.src = blog.data.image
     image.alt = ""
-    image.style.width = "300px"
+    image.style.width = "380px"
     image.style.height = "466.66px"
     image.style.margin = "auto"
     displayImage.append(image)
