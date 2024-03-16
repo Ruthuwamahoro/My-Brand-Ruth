@@ -30,10 +30,13 @@ async function fetchSingleBlog(){
     const image = document.createElement('img')
     image.src = blog.data.image
     image.alt = ""
-    image.style.width = "500px"
-    image.style.height = "666.66px"
+    image.style.width = "300px"
+    image.style.height = "466.66px"
     image.style.margin = "auto"
     displayImage.append(image)
+    //display text
+
+
     //display comments
     console.log("-------------", blog.data["comments"])
     const container = document.getElementById('mainCommentContainer')

@@ -31,7 +31,7 @@ let quill = new Quill('#editor-container', {
     theme: 'snow'
 })
 function workingWithContent(){
-    var content = quill.root.textContent;
+    var content = document.querySelector('.ql-editor').innerHTML;
     document.getElementById('content').value = content;
 }
 
