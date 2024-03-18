@@ -54,6 +54,8 @@ function DisplayComment() {
             console.log(error)
         }
     }
+
+    
     
     useEffect(() => {
         singleComment(id);
@@ -171,6 +173,7 @@ function DisplayComment() {
                  </div>
 
     )
+    
 
     
 }
