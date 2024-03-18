@@ -124,6 +124,7 @@ fetchSingleBlog()
 
 document.getElementById('submit-comment').addEventListener(('click'), () => {
     postComment()
+    window.location.reload();
 })
 
 
