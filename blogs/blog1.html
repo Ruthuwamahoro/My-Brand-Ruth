@@ -9,6 +9,9 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
     <link rel="stylesheet" href="blog1.css" />
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
   </head>
   <body>
     <section>
@@ -24,7 +27,7 @@
             <span
               ><a href=""><i class="fa-solid fa-magnifying-glass"></i></a
             ></span>
-            <span>Search</span>
+            <span>Search for new bar and access this bar free frll nfnnfhjudhfmhll</span>
           </li> -->
           <li><a href="../registration/registration.html" id="register">Register</a></li>
           <li><a href="../login-page/login.html" id="login">Login</a></li>
@@ -44,7 +47,7 @@
       <div id="description-container">
         <img
           style="height: 76px; width: 75px; border-radius: 50%"
-          src="../images/Myimage.jpg"
+          src="../my-brand/images/Myimage.jpg"
           alt="My image"
         />
         <div id="short-intro">
@@ -90,7 +93,7 @@
         </div> -->
       </div>
     </section>
-    <section id="main-content-of-blog" style="padding-right: 40px;">
+    <section id="main-content-of-blog">
       <div>
         <h5>CRUD OPERATIONS</h5>
         <p>
@@ -238,7 +241,7 @@
 
           <div style="display: flex">
             <img
-              src="../images/Myimage.jpg"
+              src="../my-brand/images/Myimage.jpg"
               alt="phiona image"
               style="width: 50px; height: 50px; border-radius: 50%;"
             />
@@ -256,7 +259,7 @@
 
           <div style="display: flex; margin-top: 40px" >
             <img
-              src="../images/Ellipse 3.png"
+              src="../my-brand/images/Ellipse 3.png"
               alt="Aima image"
               style="width: 50px; height: 50px; margin-top: 50px"
             />
@@ -285,7 +288,7 @@
           </div>
           <div style="display: flex; margin-top: 40px">
             <img
-              src="../images/Ellipse 4.png"
+              src="../my-brand/images/Ellipse 4.png"
               alt="Aima image"
               style="width: 50px; height: 50px; margin-top: 50px"
             />
@@ -480,12 +483,15 @@
                   </pattern>
                   <image id="image0_332_70" width="90" height="90" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAABaCAYAAAA4qEECAAAACXBIWXMAAAsTAAALEwEAmpwYAAAD6klEQVR4nO2dS29NURTHf4lHK4QBEkqC4AugI4SIRwxEDZB4BVWTSqiSGpp5jKSJr+HVAeEDECH1mJgQA4/Qp5FW2m7ZsiTc9DSXnrUf965fsiY39/Hf/5zss/Y6a+8LhmEYhmEYhmEYRtXMAJqBVuA6cAd4BbwFBoFRiUF57ZW855p8ZoN8hzEJy4FzQA/wDXDTjGHgHnAWWEadMwc4CjwCxkswtyjGgIfAEaCROmKeXGkfFc0tiq/AZWABNcws4CIwEMHgyvAaOkVTTbEZeJ2AwZXxBthODeDnxJvARAKmFoXX1g00kCkrgScJGOmqjOfAGjJje0lpmgscPi3cRibsA74nYJr7z/CLoYMkzmnlnNgFCj+GNhKlRRYHsU1yJZp9gMTw89pIAuY4hWlkJ4mwNtMbn/uHG+Tq2CY3SFrkajyexc6zbwYc7AjQBSyR6Ao8XflFTbRl9UTAuXLPJBp2BUwl/Vi3hDZ5JvAysskxzH4duhB1MdDARoDdVejZHXAa6SBgPbk/gSs51pXdLx6o05WgyaHN9rVs9bLnp0RNDmn2Z3kUp8axxE0OafYhFHmUgcmhzL6PYkvAeOTs4l/RzEZ8AW0pCpzLNGXqVNR9RkNwj6LgheixWFH3bY2V4HCmRi9S1D1YdvtZs6JYpzx1nFfWvr5Msa3KYn/IXOqvvjKnjAvy3ZraT5So+VdXp4scRcTWdYUSuZvAgIqIresWJRKqJOoyNLq3TKPfJzCgImLrekeJpNABWkRsXX2UyGgCAyoiti6/xC8NM5owRtvUQZipw26GhLkZWnpHmPTOFiyEWbDYEpwwS3DtopLLOL07nlOZ1GVs9LoyjfbF7SEzmkqThzT2nfu91XZFo3cj/I3fVmxG85cH7RpGN0Xeo1JELD1j0qetgj8lwIxGt4EGOfbBjEa/Jawx0vEPbgpNMbSoNzmGbEJ3CRvtWxjUmSulwXo1uj9UI7p2P5tL3Gif5gbDt4i9CDzApkl0LAusIfhmodDb35xs6ajkUsDf92PdSCS6Aw50VMxukugK/CzzBhFpkO27rsbjKTCbyKxWbul1CVToVpEIWzM/dcYVhJ+adpAYe2vwYJT9JEpbjRz1MwacInFaMp9GRlI84meqo3+GM73xbSUzVgCPEzDPVRnPUjjSZzp5dncGR2beSCFPLoNNibSVVcbLmMtqzUJUR6QSa2X0SRXOa6pZ5sogP0Qw+Isc1D2fOqIROAw8UF7ojMmD1EP1dvT8ZCyVDey3ZdvvdM0dlO9q12wJyJ0Z0s92Ergq3UC98lcgA3/8PciAvNYr77kqu1j9Z+3vQQzDMAzDMAzDMKiSn2urR8WuEcFrAAAAAElFTkSuQmCC"/>
                   </defs>
-                  </svg>
+                </svg>
               </a>
           </span>
           <span>Back to the top</span>
       </div>
   </footer>
+  <div id="root"></div>
+  <script type="text/babel" src="./DisplayBlogContent.js"></script>
   <script type="module" src="blog1.js"></script>
+
   </body>
 </html>
