@@ -1,12 +1,12 @@
-function DisplayBlogContent() {
+function DisplayImage() {
     console.log("Display Blog Content")
     const [getContent, setgetContent] = React.useState(null);
     const useEffect = React.useEffect;
     const getUrlFromPage = window.location.href
     const geturlParams = new URLSearchParams( new URL(getUrlFromPage).search );
     const id = geturlParams.get('id')
-    localStorage.setItem('blogId', id)
-    localStorage.getItem('blogId')
+    // const storeId = localStorage.setItem('blogId', id)
+    // const getId = localStorage.getItem('blogId')
     const singleBlog = async(id) => {
         console.log(id)
         const headers = new Headers();
@@ -31,7 +31,7 @@ function DisplayBlogContent() {
     if(getContent){
         return (
             <div>
-                <p>{getContent.content}</p>
+                <img src={getContent.image} alt="image"/>
             </div>
         )
     }else{
@@ -43,4 +43,4 @@ function DisplayBlogContent() {
     }
 }
 
-ReactDOM.render(<DisplayBlogContent/>, document.querySelector("#main-content-of-blog"))
+ReactDOM.render(<DisplayImage/>, document.querySelector("#api-introduction"))

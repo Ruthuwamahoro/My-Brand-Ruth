@@ -1,5 +1,5 @@
 function DisplayingBlogOnPage(){
-    console.log("hello data")
+    console.log("hello you")
     const [blogPost, setblogPost] = React.useState(null);
     const useEffect = React.useEffect;
 
@@ -29,7 +29,7 @@ function DisplayingBlogOnPage(){
     //redirecting user when button is clicked
 
     const goToMainBlog = (id) => {
-        window.location.href = `https://ruthuwamahoro.github.io/My-Brand-Ruth/UI/blogs/blog1.html?id=${id}`;
+        window.location.href=`http://localhost:5501/UI/blogs/blog1.html?id=${id}`;
     }
     
 
@@ -85,8 +85,7 @@ function DisplayingBlogOnPage(){
                     </div>
                 ))}
             </div>
-        </div>
+        </div>                  
     );
 }
-
 ReactDOM.render(<DisplayingBlogOnPage/>, document.querySelector('#blogs'));
