@@ -1,9 +1,3 @@
-// import { useDispatch, useSelector } from "react-redux";
-// import store from "../Redux/store";
-// import { Provider } from "react-redux";
-// import { fetchDataSuccess, fetchDataRequest,   fetchDataError } from "../Redux/actions/BlogActions";
-// import { legacy_createStore as createStore} from 'redux'
-
 const { Provider} = ReactRedux
 const { useSelector, useDispatch } = ReactRedux
 const { createStore } = Redux
@@ -23,6 +17,7 @@ const fetchDataSuccess = (data) => {
         payload: data
     }
 }
+console.log(fetchDataSuccess("data"))
 
 
 const fetchDataRequest = () => {
@@ -83,7 +78,8 @@ const store = createStore(combiningReducer);
             
 function DisplayComment() {
     const dispatch = useDispatch();
-    const { data, loading, error } = useSelector((state) => state);
+    const { data, loading, error } = useSelector((state) => console.log("state", state.blogData));
+    console.log("state", data,loading,error)
     //let's check the initial state of data, loading, error
     const useEffect = React.useEffect;
     const getUrlFromPage = window.location.href

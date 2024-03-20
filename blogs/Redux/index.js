@@ -1,9 +1,9 @@
 import { combineReducers } from "redux"
 import { blogReducer } from "./reducers/blogReducer"
 
-const reducer = combineReducers({
-    blog: blogReducer
+const combiningReducer = combineReducers({
+    blogData: blogReducer
 })
 
-export default reducer
+export default combiningReducer
 

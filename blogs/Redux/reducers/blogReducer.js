@@ -1,6 +1,6 @@
 import {ActionTypes} from '../constants/action-types'
 export const BlogReducer = (state={
-    data: null,
+    data: [],
     loading: false,
     error: null
 }, action) => {
@@ -11,21 +11,22 @@ export const BlogReducer = (state={
                 loading: true,
                 error: null
             };
-        case  ActionTypes.FETCH_SUCCESS:
+        case ActionTypes.FETCH_SUCCESS:
+            console.log("data fetch", action.payload)
             return {
                 ...state,
                 loading: false,
-                data: action.data
+                data: action.payload
             };
         case ActionTypes.FETCH_ERROR:
             return {
                 ...state,
                 loading: false,
-                error: action.error
+                error: action.payload
             };
         default:
             return state
-    }
+        }
 }
 
 
