@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="blog1.css" />
     <script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
     <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/redux/4.1.2/redux.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-redux/7.2.6/react-redux.min.js"></script>
     <script src='https://unpkg.com/babel-standalone@6.26.0/babel.js'></script>
   </head>
   <body>
@@ -101,7 +103,7 @@
           information about CRUD operations: <br />Incorporated within this
           project are essential CRUD (Create, Read, Update, Delete) operations,
           strategically designed to streamline data management. These operations
-          enhance the user experience by seamlessly interacting with the
+          enhance the user experience by seamimport { legacy_createStore as createStore} from 'redux'lessly interacting with the
           application's features: <br />Create: Dynamically introduce new items
           or entities into the system. <br />Read: Retrieve and display existing
           data, providing a comprehensive overview. <br />Update: Modify and

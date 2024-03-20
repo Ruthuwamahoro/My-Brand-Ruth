@@ -1,5 +1,4 @@
 function DisplayComment() {
-    console.log("Display Blog Content---------")
     const [getComment, setgetComment] = React.useState(null);
     const useEffect = React.useEffect;
     const getUrlFromPage = window.location.href
@@ -55,12 +54,17 @@ function DisplayComment() {
         }
     }
 
+    function handleLiking(){
+        const changeIcon = document.querySelectorAll('#like')
+        console.log(changeIcon)
+    }
+
     
     
     useEffect(() => {
         singleComment(id);
         HandlePostComment()
-
+        
     }, [])
     
     console.log("??????????", getComment ? getComment.length : 0)
@@ -157,7 +161,7 @@ function DisplayComment() {
                                             <span style={time}>{displayTime(new Date(comment.created_at))}</span>
                                             <p style={commentMessage}>{comment.commentMessage}</p>
                                             <div class="doc">
-                                                <span><i class="fa-regular fa-heart" style={{color:"black", cursor: "pointer"}}></i></span>
+                                                <span><i class="fa-regular fa-heart" style={{color:"black", cursor: "pointer"}} onClick={ handleLiking }></i></span>
                                                 <span style={{marginTop: "30px", marginLeft: "10px"}}><i class="fa-solid fa-comment" style={{marginLeft: "20px", cursor: "pointer"}}></i></span>
                                                 <span><i class="fa-solid fa-share" style={{marginLeft: "20px", cursor: "pointer"}}></i></span>
                                                 <span style={replyStyle}>Reply</span>

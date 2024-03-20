@@ -2,6 +2,7 @@ function DisplayBlogContent() {
     console.log("Display Blog Content")
     const [getContent, setgetContent] = React.useState(null);
     const useEffect = React.useEffect;
+    
     const getUrlFromPage = window.location.href
     const geturlParams = new URLSearchParams( new URL(getUrlFromPage).search );
     const id = geturlParams.get('id')

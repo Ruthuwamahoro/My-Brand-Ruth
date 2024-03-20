@@ -5,8 +5,8 @@ function DisplayBlogTitleAndIntro() {
     const getUrlFromPage = window.location.href
     const geturlParams = new URLSearchParams( new URL(getUrlFromPage).search );
     const id = geturlParams.get('id')
-    const storeId = localStorage.setItem('blogId', id)
-    const getId = localStorage.getItem('blogId')
+    localStorage.setItem('blogId', id)
+    localStorage.getItem('blogId')
     const singleBlog = async(id) => {
         console.log(id)
         const headers = new Headers();
